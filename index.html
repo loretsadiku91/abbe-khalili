@@ -73,6 +73,8 @@ main{padding-block:28px 72px}
 main:has(> .band:last-child){padding-bottom:0}
 .foot{border-top:1px solid var(--line)}
 .foot .wrap{padding-block:20px}
+.kontakt a,.foot a{text-underline-offset:3px}
+.kontakt a{font-weight:600}
 
 .display{font-family:var(--display);font-weight:700;text-transform:uppercase;line-height:.98;letter-spacing:.01em;margin:0}
 .h1{font-size:clamp(40px,7vw,76px)}
@@ -786,7 +788,7 @@ function layout(inner){
   return '<div class="testbar"><div class="wrap">' + bar + '</div></div>' +
     '<header class="top"><div class="wrap top-in"><a href="#start" class="brand">Abbe Khalili</a><nav class="nav" aria-label="Huvudmeny">' + nav + '</nav></div></header>' +
     fl + '<main id="main">' + inner + '</main>' +
-    '<footer class="foot"><div class="wrap row between small muted"><span>© Abbe Khalili</span><span class="row" style="gap:4px 20px">' + demoTools + '<a href="#villkor">Bokningsvillkor och integritet</a></span></div></footer>';
+    '<footer class="foot"><div class="wrap row between small muted"><span class="row" style="gap:4px 16px"><span>© Abbe Khalili</span><a href="tel:+46723276060">072-327 60 60</a><a href="mailto:abbekhalili@gmail.com">abbekhalili@gmail.com</a><a href="https://www.instagram.com/abbekhalili/" target="_blank" rel="noopener">Instagram</a></span><span class="row" style="gap:4px 20px">' + demoTools + '<a href="#villkor">Bokningsvillkor och integritet</a></span></div></footer>';
 }
 function currentView(){
   const r = S.route;
@@ -856,7 +858,7 @@ function viewStart(){
       '<div class="card stack-s"><h3>Inställda pass</h3><p class="muted">Gruppträning kräver minst 6 bekräftade spelare och duo/trio minst 2, räknat 24 timmar före start. Annars ställs passet in.</p></div>' +
       '<div class="card stack-s"><h3>Återbetalning</h3><p class="muted">Ställs ett pass in får du tillbaka hela beloppet du betalat.</p></div></div></section>' +
   '</div>' +
-  '<section class="band" id="kontakt"><div class="wrap"><div class="stack-s"><h2 class="display h2">Kontakt</h2><div class="row muted" style="gap:8px 28px"><span>[Telefon]</span><span>[E-post]</span><span>[Instagram]</span></div></div><a class="btn btn-bib" href="#kalender">Se lediga pass</a></div></section>';
+  '<section class="band" id="kontakt"><div class="wrap"><div class="stack-s"><h2 class="display h2">Kontakt</h2><div class="row kontakt" style="gap:8px 28px"><a href="tel:+46723276060">072-327 60 60</a><a href="mailto:abbekhalili@gmail.com">abbekhalili@gmail.com</a><a href="https://www.instagram.com/abbekhalili/" target="_blank" rel="noopener">@abbekhalili på Instagram</a></div></div><a class="btn btn-bib" href="#kalender">Se lediga pass</a></div></section>';
 }
 
 /* ---------- Kalender ---------- */
@@ -1168,7 +1170,7 @@ function viewVillkor(){
     sec('Varför', ['För att hantera bokningar och betalningar, anpassa träningen efter spelaren och sätta ihop jämna grupper.']) +
     sec('Vem som ser uppgifterna', ['Du ser bara dina egna spelarprofiler och bokningar. Abbe ser alla som administratör. Andra besökare ser bara hur många platser som är bokade på varje pass.']) +
     sec('Hur länge', ['[Att bestämma: till exempel 24 månader efter senaste bokningen.]']) +
-    sec('Dina rättigheter', ['Du kan be om att få se, rätta eller ta bort dina uppgifter. Kontakta [e-post].']) +
+    sec('Dina rättigheter', ['Du kan be om att få se, rätta eller ta bort dina uppgifter. Kontakta abbekhalili@gmail.com.']) +
   '</div>';
 }
 
