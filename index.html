@@ -1,0 +1,1559 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Boka fotbollsträning med Abbe Khalili – individuell träning, duo/trio och gruppträning i Helsingborg.">
+<title>Abbe Khalili Fotbollsträning</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Matchdag: planpapper som grund, plangrönt för handling, västgult för det som sticker ut, kondenserade rubriker som på en matchtavla */
+:root{
+  --bg:#F5F4EE; --surface:#FFFFFF; --surface-2:#ECEAE2; --fg:#13201A; --muted:#4B5751; --line:#DAD8CE; --line-2:#B9B6A8;
+  --accent:#1E6B44; --accent-fg:#FFFFFF; --accent-soft:#E3EEE7; --accent-soft-fg:#1E5A3A;
+  --bib:#F4C531; --bib-fg:#13201A; --ink:#13201A; --ink-fg:#FFFFFF;
+  --side:#13201A; --side-fg:#FFFFFF; --side-muted:#C9D3CC; --side-active:#2E3D35;
+  --ok-bg:#DDEFE3; --ok-fg:#1E5A3A; --warn-bg:#FBEBB0; --warn-fg:#5A4300; --info-bg:#DCE7F7; --info-fg:#1D3F73;
+  --bad-bg:#F6DCD6; --bad-fg:#7A2717; --neu-bg:#ECEAE2; --neu-fg:#3D4842;
+  --danger:#A3321A; --danger-fg:#FFFFFF; --focus:#2F5C9E; --shadow:rgba(19,32,26,.14);  --display:'Barlow Condensed','Arial Narrow','Roboto Condensed',sans-serif;
+  --body:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1712; --surface:#17211B; --surface-2:#1F2B24; --fg:#ECF0EB; --muted:#A7B3AB; --line:#2B3831; --line-2:#46564D;
+    --accent:#58BE86; --accent-fg:#08130D; --accent-soft:#1D3527; --accent-soft-fg:#9FDDB9;
+    --bib:#F4C531; --bib-fg:#13201A; --ink:#ECF0EB; --ink-fg:#0F1712;
+    --side:#0A100C; --side-fg:#ECF0EB; --side-muted:#9AA7A0; --side-active:#22302A;
+    --ok-bg:#1D3527; --ok-fg:#9FDDB9; --warn-bg:#3A3112; --warn-fg:#F2D77A; --info-bg:#1B2A40; --info-fg:#A9C6F0;
+    --bad-bg:#3B1E18; --bad-fg:#F2A99A; --neu-bg:#26302A; --neu-fg:#C3CCC6;
+    --danger:#E0715A; --danger-fg:#1A0A06; --focus:#8DB4F0; --shadow:rgba(0,0,0,.5);    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1712; --surface:#17211B; --surface-2:#1F2B24; --fg:#ECF0EB; --muted:#A7B3AB; --line:#2B3831; --line-2:#46564D;
+  --accent:#58BE86; --accent-fg:#08130D; --accent-soft:#1D3527; --accent-soft-fg:#9FDDB9;
+  --bib:#F4C531; --bib-fg:#13201A; --ink:#ECF0EB; --ink-fg:#0F1712;
+  --side:#0A100C; --side-fg:#ECF0EB; --side-muted:#9AA7A0; --side-active:#22302A;
+  --ok-bg:#1D3527; --ok-fg:#9FDDB9; --warn-bg:#3A3112; --warn-fg:#F2D77A; --info-bg:#1B2A40; --info-fg:#A9C6F0;
+  --bad-bg:#3B1E18; --bad-fg:#F2A99A; --neu-bg:#26302A; --neu-fg:#C3CCC6;
+  --danger:#E0715A; --danger-fg:#1A0A06; --focus:#8DB4F0; --shadow:rgba(0,0,0,.5);  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.5;-webkit-text-size-adjust:100%}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+h1,h2,h3{text-wrap:balance}
+h3{margin:0;font-size:19px}
+p{margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.d-block{display:block}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+.tnum{font-variant-numeric:tabular-nums}
+.mt-s{margin-top:8px}.mt-m{margin-top:20px}.mt-l{margin-top:32px}
+.stack{display:flex;flex-direction:column;gap:16px}
+.stack-s{display:flex;flex-direction:column;gap:8px}
+.stack-l{display:flex;flex-direction:column;gap:28px}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.between{justify-content:space-between}
+
+.testbar{background:var(--bib);color:var(--bib-fg);font-size:14px;font-weight:600}
+.testbar .wrap{padding-block:8px}
+.top{border-bottom:1px solid var(--line)}
+.top-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;padding-block:12px}
+.brand{font-family:var(--display);font-weight:700;font-size:28px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;line-height:1}
+.nav{display:flex;flex-wrap:wrap;align-items:center;gap:4px 20px}
+.nav-a{display:inline-flex;align-items:center;min-height:44px;font-weight:600;text-decoration:none;border-bottom:3px solid transparent}
+.nav-a[aria-current="page"]{border-bottom-color:var(--accent)}
+.seg{display:inline-flex;padding:3px;border-radius:8px;background:var(--surface-2);gap:2px}
+.seg a{display:inline-flex;align-items:center;min-height:38px;padding:0 14px;border-radius:6px;text-decoration:none;font-weight:600;font-size:14px}
+.seg a.on{background:var(--surface);box-shadow:0 1px 2px var(--shadow)}
+main{padding-block:28px 72px}
+main:has(> .band:last-child){padding-bottom:0}
+.foot{border-top:1px solid var(--line)}
+.foot .wrap{padding-block:20px}
+
+.display{font-family:var(--display);font-weight:700;text-transform:uppercase;line-height:.98;letter-spacing:.01em;margin:0}
+.h1{font-size:clamp(40px,7vw,76px)}
+.h2{font-size:clamp(30px,4.4vw,44px)}
+.h3{font-size:28px}
+.eyebrow{margin:0 0 12px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:19px;color:var(--muted);max-width:56ch}
+.big{font-family:var(--display);font-weight:700;font-size:40px;line-height:1;font-variant-numeric:tabular-nums}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:20px}
+.box{padding:14px 16px;border-radius:8px}
+.empty{padding:28px;text-align:center;border:1.5px dashed var(--line-2);border-radius:8px;color:var(--muted)}
+.flash{margin-top:16px;padding:10px 16px;border-radius:8px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 12px;font-weight:600}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:6px;border:1.5px solid transparent;font:inherit;font-weight:700;text-decoration:none;cursor:pointer;text-align:center;line-height:1.2}
+.btn-primary{background:var(--accent);color:var(--accent-fg)}
+.btn-ghost{background:transparent;color:var(--fg);border-color:var(--fg)}
+.btn-danger{background:var(--danger);color:var(--danger-fg)}
+.btn-danger-ghost{background:transparent;color:var(--danger);border-color:var(--danger)}
+.btn-bib{background:var(--bib);color:var(--bib-fg)}
+.btn-test{background:transparent;color:var(--fg);border:1.5px dashed var(--fg)}
+.btn-sm{min-height:44px;padding:0 16px;font-size:15px}
+.btn-block{display:flex;width:100%}
+.btn[disabled],.btn.is-off{opacity:.5;cursor:not-allowed}
+.linkbtn{background:none;border:0;padding:0;min-height:44px;font:inherit;font-weight:600;color:var(--fg);text-decoration:underline;text-underline-offset:3px;cursor:pointer;display:inline-flex;align-items:center}
+.fbtn{min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid var(--fg);background:var(--surface);color:var(--fg);font:inherit;font-weight:600;cursor:pointer}
+.fbtn[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+
+.chip{display:inline-flex;align-items:center;padding:3px 10px;border-radius:999px;font-size:13px;font-weight:600;white-space:nowrap;line-height:1.4}
+.t-ok{background:var(--ok-bg);color:var(--ok-fg)}
+.t-warn{background:var(--warn-bg);color:var(--warn-fg)}
+.t-info{background:var(--info-bg);color:var(--info-fg)}
+.t-bad{background:var(--bad-bg);color:var(--bad-fg)}
+.t-neutral{background:var(--neu-bg);color:var(--neu-fg)}
+.t-muted{background:transparent;color:var(--muted);padding:0}
+.ty-ind{background:var(--ink);color:var(--ink-fg)}
+.ty-duo{background:var(--accent);color:var(--accent-fg)}
+.ty-grp{background:var(--bib);color:var(--bib-fg)}
+
+.hero{display:flex;flex-wrap:wrap;align-items:center;gap:40px;padding-block:20px 56px}
+.hero>div{flex:1 1 420px;min-width:0}
+.photo{position:relative;height:400px;max-width:100%;border-radius:8px;background:var(--surface-2);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:600;overflow:hidden}
+.photo svg{position:absolute;inset:0;width:100%;height:100%;color:var(--line-2)}
+.photo span{position:relative}
+.nextcard{display:flex;align-items:center;justify-content:space-between;gap:16px;text-decoration:none}
+.sec{padding-bottom:64px}
+.sec-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:20px}
+.forms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.fcard{display:flex;flex-direction:column;gap:14px}
+.fcard .fex{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:14px;font-weight:600}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.steps li{display:flex;flex-direction:column;gap:10px;padding-top:18px;border-top:3px solid var(--fg)}
+.stepn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--bib);color:var(--bib-fg);font-family:var(--display);font-weight:700;font-size:24px}
+.ph{padding:20px;border:1.5px dashed var(--line-2);border-radius:8px;color:var(--muted)}
+.soft{background:var(--accent-soft);color:var(--accent-soft-fg);border-radius:8px;padding:24px}
+.choose{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.fact{padding:0;overflow:hidden}
+.fact-h{background:var(--side);color:var(--side-fg);padding:12px 20px;font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:.06em;text-transform:uppercase}
+.fact dl{display:grid;grid-template-columns:120px minmax(0,1fr);margin:0}
+.fact dt,.fact dd{padding:11px 20px;border-top:1px solid var(--line)}
+.fact dl>:nth-child(1),.fact dl>:nth-child(2){border-top:0}
+.fact dt{color:var(--muted);font-size:14px;padding-right:0}
+.fact dd{margin:0;font-weight:600;min-width:0;overflow-wrap:anywhere}
+.gold{background:var(--bib);color:var(--bib-fg)}
+.choose-k{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.adapt{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:14px}
+.band{background:var(--side);color:var(--side-fg)}
+.band .wrap{padding-block:48px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+.band .muted{color:var(--side-muted)}
+
+.slist{display:flex;flex-direction:column;gap:10px}
+.srow{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;padding:16px 20px}
+.sdate{width:64px;text-align:center;display:flex;flex-direction:column;line-height:1.15}
+.sd-day{font-size:13px;font-weight:700;text-transform:uppercase;color:var(--muted)}
+.sd-num{font-family:var(--display);font-weight:700;font-size:36px;line-height:1}
+.sd-mon{font-size:13px;color:var(--muted)}
+.smain{flex:1 1 280px;min-width:0}
+.stime{font-weight:700;font-size:18px;font-variant-numeric:tabular-nums}
+.sspots{flex:0 1 220px;min-width:170px}
+.bar{height:6px;border-radius:999px;background:var(--surface-2);overflow:hidden;margin:6px 0}
+.bar>i{display:block;height:100%;background:var(--accent);border-radius:999px}
+.sact{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.sprice{font-weight:700;font-variant-numeric:tabular-nums}
+.is-dim{opacity:.72}
+
+.cols{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start}
+.c-main{flex:1 1 440px;min-width:0}
+.c-side{flex:1 1 320px;min-width:0}
+.dl{display:grid;grid-template-columns:110px minmax(0,1fr);gap:8px 14px;margin:0}
+.dl dt{color:var(--muted)}
+.dl dd{margin:0;font-weight:600;min-width:0;overflow-wrap:anywhere}
+.sum{display:flex;flex-direction:column;gap:8px}
+.kv{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.kv-total{padding-top:10px;border-top:1px solid var(--line);align-items:baseline}
+
+.form{display:flex;flex-direction:column;gap:20px;max-width:620px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field>label,legend{font-weight:700}
+.hint{font-weight:400;color:var(--muted)}
+.input{min-height:48px;padding:0 12px;border:1px solid var(--line-2);border-radius:6px;background:var(--surface);color:var(--fg);font:inherit;width:100%}
+textarea.input{padding:12px;min-height:96px;resize:vertical}
+select.input{padding-right:8px}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend{padding:0;margin-bottom:8px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts.col{flex-direction:column}
+.opt{display:flex;align-items:center;gap:10px;min-height:48px;padding:8px 14px;border:1.5px solid var(--line-2);border-radius:6px;background:var(--surface);cursor:pointer;font-weight:500}
+.opt.pill{border-radius:999px;min-height:44px}
+.opt input{width:20px;height:20px;accent-color:var(--accent);margin:0;flex:0 0 auto}
+.opt:has(input:checked){border-color:var(--accent);background:var(--accent-soft);font-weight:700}
+.opt:has(input:focus-visible){outline:3px solid var(--focus);outline-offset:2px}
+.pick{display:flex;align-items:center;gap:12px;width:100%;min-height:56px;padding:8px 14px;border:1.5px solid var(--line-2);border-radius:6px;background:var(--surface);color:var(--fg);font:inherit;text-align:left;cursor:pointer}
+.pick[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.pick[disabled]{opacity:.55;cursor:not-allowed}
+.pick .ic{flex:0 0 24px;height:24px;border-radius:4px;border:2px solid var(--line-2);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.pick.radio .ic{border-radius:50%}
+.pick[aria-pressed="true"] .ic{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.pick .grow{flex:1;min-width:0}
+.check{display:flex;align-items:flex-start;gap:10px;cursor:pointer}
+.check input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--accent);flex:0 0 auto}
+
+.tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.tl li{display:flex;gap:12px;align-items:flex-start}
+.tl-dot{flex:0 0 28px;height:28px;border-radius:50%;border:2px solid var(--line-2);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.tl-done .tl-dot{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.tl-now .tl-dot{border:3px solid var(--accent);background:var(--accent-soft)}
+.tl-now .tl-t{font-weight:700}
+.tl-next{color:var(--muted)}
+.bcard{display:flex;flex-direction:column;gap:10px}
+.bcard h3{font-size:18px}
+.acts{display:flex;flex-wrap:wrap;align-items:center;gap:6px 20px}
+.tabs{display:inline-flex;padding:4px;border-radius:8px;background:var(--surface-2);gap:4px}
+.tabs button{min-height:40px;padding:0 16px;border:0;border-radius:6px;background:transparent;color:var(--fg);font:inherit;font-weight:600;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--surface);box-shadow:0 1px 2px var(--shadow)}
+
+.admin{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start}
+.side{flex:1 1 200px;max-width:100%;background:var(--side);color:var(--side-fg);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:4px}
+.side .lbl{padding:6px 12px 10px;font-size:13px;color:var(--side-muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.side a{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px;padding:0 12px;border-radius:6px;color:var(--side-fg);text-decoration:none;font-weight:500}
+.side a[aria-current="page"]{background:var(--side-active);font-weight:700}
+.badge{min-width:24px;padding:0 8px;border-radius:999px;background:var(--bib);color:var(--bib-fg);font-size:13px;font-weight:700;text-align:center}
+.amain{flex:999 1 560px;min-width:0;display:flex;flex-direction:column;gap:28px}
+.tablebox{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:8px}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th{text-align:left;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;padding:12px 14px;white-space:nowrap}
+td{padding:12px 14px;border-top:1px solid var(--line);vertical-align:top}
+td.num,th.num{text-align:right}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.tile .k{font-size:13px;color:var(--muted)}
+.tile .v{font-family:var(--display);font-weight:700;font-size:30px;line-height:1.1;font-variant-numeric:tabular-nums}
+.todo{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 20px;padding:14px 18px}
+.todo-t{display:flex;gap:12px;align-items:flex-start;flex:1 1 360px;min-width:0}
+.dot{width:10px;height:10px;border-radius:50%;flex:0 0 10px;margin-top:7px}
+.dot-warn{background:#C99A00}.dot-bad{background:var(--danger)}.dot-info{background:var(--focus)}
+.rev{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.prof{display:grid;grid-template-columns:110px minmax(0,1fr);gap:4px 10px;font-size:14px;margin:0}
+.prof dt{color:var(--muted)}
+.prof dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+.att{min-height:40px;min-width:136px;padding:0 12px;border-radius:6px;border:1.5px solid var(--line-2);background:var(--surface);color:var(--fg);font:inherit;font-weight:600;cursor:pointer}
+.att[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.loading{padding:40px 0;color:var(--muted)}
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="app"><div class="wrap loading">Laddar …</div></div>
+<script>
+(function(){
+'use strict';
+
+/* ---------- Fasta regler ---------- */
+const TYPES = {
+  ind:{name:'Individuell träning', short:'Individuell', min:1, max:1, players:'1 spelare', price:599},
+  duo:{name:'Duo/trio', short:'Duo/trio', min:2, max:3, players:'2–3 spelare', price:349},
+  grp:{name:'Gruppträning', short:'Gruppträning', min:6, max:12, players:'6–12 spelare', price:200}
+};
+const H = 3600e3;
+const HOLD_MS = 10 * 60e3;       // platser hålls 10 min under betalning
+const CANCEL_LIMIT = 12 * H;     // avboka/flytta senast 12 h före
+const CHECK_LIMIT = 24 * H;      // minsta antal kontrolleras 24 h före
+const BOOK_CLOSE = H;            // bokningen stänger 1 h före
+const ACTIVE = ['reserved','pending_review','approved','confirmed'];
+const TAB = Math.random().toString(36).slice(2, 8);
+const EXP = {ingen:'Har inte spelat i förening', ar1:'1–2 år i förening', ar3:'3–5 år i förening', ar5:'Mer än 5 år i förening'};
+const LEVEL = {nyb:'Nybörjare', foren:'Spelar i förening', hog:'Spelar på hög nivå, t.ex. akademi'};
+const GOALS = ['Teknik','Passningar','Avslut','Snabbhet','Spelförståelse','Försvarsspel','Nickar','Målvaktsspel'];
+const REASONS = ['För få spelare','Sjukdom','Plan eller väder','Annat'];
+const DEFAULT_EQ = 'Fotbollsskor, benskydd och vattenflaska. Bollar finns på plats.';
+const BST = {
+  reserved:['Väntar på betalning','info'], pending_review:['Väntar på granskning','warn'],
+  approved:['Godkänd – väntar på betalning','info'], confirmed:['Bekräftad','ok'],
+  cancelled:['Avbokad','neutral'], declined:['Avslagen','bad'], expired:['Reservationen gick ut','neutral'],
+  payexpired:['Betalningstiden gick ut','neutral'], session_cancelled:['Passet inställt','bad']
+};
+
+/* ---------- Inställningar ---------- */
+/* Fylls i när Supabase-projektet finns. Tomt = demoläge (allt sparas bara i webbläsaren). */
+const CONFIG = {
+  supabaseUrl: '',   // "Project URL" från Supabase → Settings → API
+  supabaseKey: '',   // nyckeln "anon public" – den är gjord för att synas på hemsidan
+  sms: false         // sätts till true när sms-tjänsten är inkopplad i Supabase
+};
+const SUPA_JS = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js';
+
+/* ---------- Tillstånd ---------- */
+const S = {
+  ready:false, uid:null, email:null, isAdmin:false,
+  sessions:{}, counts:{}, families:{}, loaded:{s:false,t:false,f:false}, fresh:false, slow:false, err:null,
+  route:{name:'start'}, filter:'alla', ui:{}, drafts:{}, busy:false, flash:null, keepFlash:false
+};
+function ymd(d){ return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); }
+function hm(d){ return String(d.getHours()).padStart(2,'0') + ':' + String(d.getMinutes()).padStart(2,'0'); }
+function loadScript(src){ return new Promise((res, rej) => { const el = document.createElement('script'); el.src = src; el.onload = res; el.onerror = () => rej(new Error('Kunde inte ladda ' + src)); document.head.appendChild(el); }); }
+function normPhone(p){ let x = String(p || '').replace(/[\s\-()]/g, ''); if (x.indexOf('00') === 0) x = '+' + x.slice(2); else if (x.indexOf('0') === 0) x = '+46' + x.slice(1); return x; }
+
+/* ---------- Hjälpfunktioner ---------- */
+const DAYS = ['sön','mån','tis','ons','tor','fre','lör'];
+const DAYS_L = ['söndag','måndag','tisdag','onsdag','torsdag','fredag','lördag'];
+const MON = ['jan','feb','mar','apr','maj','jun','jul','aug','sep','okt','nov','dec'];
+const MON_L = ['januari','februari','mars','april','maj','juni','juli','augusti','september','oktober','november','december'];
+function esc(v){ return String(v == null ? '' : v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function kr(n){ return String(Math.round(Number(n) || 0)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' kr'; }
+function cap(s){ return s.charAt(0).toUpperCase() + s.slice(1); }
+function fDay(ms){ const d = new Date(ms); return cap(DAYS[d.getDay()]) + ' ' + d.getDate() + ' ' + MON[d.getMonth()]; }
+function fDayLong(ms){ const d = new Date(ms); return cap(DAYS_L[d.getDay()]) + ' ' + d.getDate() + ' ' + MON_L[d.getMonth()]; }
+function fTime(ms){ const d = new Date(ms); return String(d.getHours()).padStart(2,'0') + ':' + String(d.getMinutes()).padStart(2,'0'); }
+function fWhen(ms){ return fDay(ms) + ' kl. ' + fTime(ms); }
+function startOf(s){ const t = new Date(String(s.date) + 'T' + String(s.time) + ':00').getTime(); return isNaN(t) ? 0 : t; }
+function ageOf(by){ return by ? (new Date().getFullYear() - Number(by)) + ' år' : ''; }
+function rid(p){ return p + Date.now().toString(36) + Math.random().toString(36).slice(2, 7); }
+function sleep(ms){ return new Promise(r => setTimeout(r, ms)); }
+function chip(label, tone){ return '<span class="chip t-' + tone + '">' + esc(label) + '</span>'; }
+function typeTag(t){ return '<span class="chip ty-' + t + '">' + TYPES[t].short + '</span>'; }
+function isLoaded(){ return S.loaded.s && S.loaded.t && S.loaded.f; }
+function me(){ return S.uid ? S.families[S.uid] || null : null; }
+function myB(bid){ const f = me(); return f && f.bookings ? f.bookings[bid] || null : null; }
+function activePlayers(fam){ return Object.entries((fam && fam.players) || {}).filter(([, p]) => p && !p.removed).sort((a, b) => (a[1].createdAt || 0) - (b[1].createdAt || 0)); }
+function userErr(text){ const e = new Error(text); e.userMsg = text; return e; }
+function errText(e){
+  if (e && e.userMsg) return e.userMsg;
+  const c = e && e.code;
+  if (c === 'invalid_argument') return 'Det gick inte att spara. Du kanske saknar behörighet att ändra här – be den som delade sidan om behörighet.';
+  if (c === 'quota_exceeded') return 'Databasen är full. Ta bort gamla testpass och försök igen.';
+  if (c === 'resource_exhausted') return 'För många ändringar på kort tid. Vänta en stund och försök igen.';
+  if (c === 'revoked') return 'Din åtkomst till sidan har ändrats. Ladda om sidan.';
+  return 'Något gick fel. Försök igen.';
+}
+function flash(text, tone){ S.flash = {text, tone: tone || 'ok'}; }
+function flashNext(text, tone){ flash(text, tone); S.keepFlash = true; }
+
+/* ---------- Platser och status ---------- */
+function counts(x, now){
+  if (x.st === 'reserved') return (x.hold || 0) > now;
+  if (x.st === 'approved') return !(x.payBy && x.payBy < now);
+  return x.st === 'pending_review' || x.st === 'confirmed';
+}
+function sessionStats(sid){
+  const s = S.sessions[sid], c = S.counts[sid] || {used:0, confirmed:0, pending:0};
+  const max = s ? (Number(s.max) || TYPES[s.type].max) : 0;
+  return {used: c.used, confirmed: c.confirmed, pending: c.pending, max, free: Math.max(0, max - c.used)};
+}
+function sessionState(sid, s, now){
+  const st = startOf(s), stats = sessionStats(sid, now);
+  if (s.status === 'cancelled') return {code:'cancelled', label:'Inställt', tone:'bad', stats};
+  if (now >= st) return {code:'past', label:'Har varit', tone:'neutral', stats};
+  if (now >= st - BOOK_CLOSE) return {code:'closed', label:'Bokningen stängd', tone:'neutral', stats};
+  if (stats.free <= 0) return {code:'full', label:'Fullbokat', tone:'neutral', stats};
+  return {code:'open', label: s.type === 'ind' ? 'Ledig' : stats.free + ' av ' + stats.max + ' platser kvar', tone:'ok', stats};
+}
+function minNote(s, stats, now){
+  if (s.type === 'ind' || s.status === 'cancelled') return null;
+  const min = TYPES[s.type].min, st = startOf(s);
+  if (s.checked === 'ok') return {text:'Blir av', tone:'ok'};
+  if (now >= st - CHECK_LIMIT && stats.confirmed < min) return {text:'Ställs in – för få spelare', tone:'bad'};
+  return {text: stats.confirmed + ' bekräftade · minst ' + min + ' krävs', tone:'muted'};
+}
+function effStatus(b, now){
+  let st = b.status;
+  if (st === 'reserved' && !((b.holdUntil || 0) > now)) st = 'expired';
+  if (st === 'approved' && b.payBy && b.payBy < now) st = 'payexpired';
+  const s = S.sessions[b.sid];
+  if (s && s.status === 'cancelled' && (ACTIVE.indexOf(st) >= 0 || st === 'expired' || st === 'payexpired')) st = 'session_cancelled';
+  return st;
+}
+function money(b){
+  const paid = (b.pay && b.pay.status === 'verified') ? Number(b.pay.amount) || 0 : 0;
+  let refPending = 0, refDone = 0;
+  Object.values(b.refunds || {}).forEach(r => { if (!r) return; if (r.status === 'verified') refDone += Number(r.amount) || 0; else refPending += Number(r.amount) || 0; });
+  return {paid, refPending, refDone, remaining: paid - refPending - refDone};
+}
+function payStatus(b){
+  const m = money(b);
+  if (m.refPending > 0) return ['Återbetalning pågår · ' + kr(m.refPending), 'info'];
+  if (m.refDone > 0 && m.remaining <= 0) return ['Återbetald · ' + kr(m.refDone), 'ok'];
+  if (m.paid > 0 && m.refDone > 0) return ['Betald · ' + kr(m.refDone) + ' återbetalt', 'ok'];
+  if (m.paid > 0 && b.lateCancel && b.status === 'cancelled') return ['Betald · ingen återbetalning', 'neutral'];
+  if (m.paid > 0) return ['Betald · ' + kr(m.paid), 'ok'];
+  if (b.pay && b.pay.status === 'waiting') return ['Väntar på Swish', 'info'];
+  return ['Inte betald', 'neutral'];
+}
+function sortedSessions(){
+  return Object.entries(S.sessions).map(([id, s]) => ({id, s, st: startOf(s)})).filter(x => x.st && TYPES[x.s.type]).sort((a, b) => a.st - b.st);
+}
+function upcomingAll(now){ return sortedSessions().filter(x => x.st + H > now && x.st < now + 120 * 24 * H); }
+function allBookings(){
+  const out = [];
+  for (const fu in S.families){
+    const fam = S.families[fu] || {};
+    for (const bid in (fam.bookings || {})) out.push({fu, bid, b: fam.bookings[bid], fam});
+  }
+  return out;
+}
+
+/* ---------- Kundens val ---------- */
+function eligibleFor(sid){
+  const fam = me(); if (!fam) return [];
+  const now = Date.now(), booked = new Set();
+  Object.values(fam.bookings || {}).forEach(b => { if (b && b.sid === sid && ACTIVE.indexOf(effStatus(b, now)) >= 0) (b.players || []).forEach(p => booked.add(p)); });
+  return activePlayers(fam).map(([pid]) => pid).filter(pid => !booked.has(pid));
+}
+function effectiveSel(sid, elig){
+  if (S.ui.selSid === sid) return (S.ui.sel || []).filter(p => elig.indexOf(p) >= 0);
+  return elig.length === 1 ? [elig[0]] : [];
+}
+function moveTargets(b, now){
+  return sortedSessions().filter(x => x.id !== b.sid && x.s.type === b.type && x.s.status !== 'cancelled' && x.st - CANCEL_LIMIT > now && sessionState(x.id, x.s, now).stats.free >= b.n);
+}
+
+/* ---------- Bokning och övriga åtgärder (via databasen) ---------- */
+function preBook(sid){
+  const s = S.sessions[sid]; const now = Date.now();
+  if (!s || sessionState(sid, s, now).code !== 'open') throw userErr('Passet går inte att boka längre.');
+  const inline = document.getElementById('newp-form');
+  if (inline){ if (!me() || !me().account) readGuest(); readPlayer(new FormData(inline)); }
+  const wd = S.drafts['wish-' + sid] || {};
+  const wish = {mode: wd.wm === 'self' ? 'self' : 'abbe', goals: wd.wm === 'self' ? [].concat(wd.wg || []).map(String) : [], note: String(wd.wn || '').trim().slice(0, 300)};
+  if (wish.mode === 'self' && !wish.goals.length && !wish.note) throw userErr('Välj vad ni vill träna på, eller låt Abbe välja.');
+  if (!S.ui.terms) throw userErr('Godkänn bokningsvillkoren först.');
+  return {s, inline, wish};
+}
+async function doBook(sid){
+  const {s, inline, wish} = preBook(sid);
+  const sel = inline ? [await saveInlinePlayer()] : effectiveSel(sid, eligibleFor(sid));
+  if (!sel.length || !sel[0]) throw userErr('Välj minst en spelare.');
+  if (s.type === 'ind' && sel.length > 1) throw userErr('Individuell träning gäller en spelare.');
+  const bid = await B.book(sid, sel, wish);
+  S.ui.sel = []; S.ui.selSid = null; S.ui.terms = false; delete S.drafts['wish-' + sid];
+  if (s.type === 'grp'){ flashNext('Anmälan är skickad. Abbe granskar den, och du betalar när den är godkänd.'); go('mina-sidor'); }
+  else go('betala-' + bid);
+}
+async function rebook(bid){ await B.rebook(bid); go('betala-' + bid); }
+async function startPay(bid){ await B.startPay(bid); }
+async function simulatePaid(fu, bid){ await B.simulatePaid(fu, bid); }
+async function verifyRefunds(fu, bid){ await B.verifyRefunds(fu, bid); }
+async function cancelDo(bid){
+  const b = myB(bid); if (!b) throw userErr('Bokningen finns inte.');
+  const sel = (S.ui.cxBid === bid ? S.ui.cx : (b.players || [])).filter(p => (b.players || []).indexOf(p) >= 0);
+  if (!sel.length) throw userErr('Välj minst en spelare att avboka.');
+  const refund = Number(await B.cancel(bid, sel)) || 0;
+  S.ui.cx = null; S.ui.cxBid = null;
+  flashNext(refund > 0 ? 'Avbokningen är klar. ' + kr(refund) + ' betalas tillbaka till Swish.' : 'Avbokningen är klar.');
+  go('mina-sidor');
+}
+async function moveDo(bid){
+  const to = S.ui.mvBid === bid ? S.ui.mv : null;
+  const toS = to && S.sessions[to];
+  if (!toS) throw userErr('Välj ett pass att flytta till.');
+  await B.move(bid, to);
+  S.ui.mv = null; S.ui.mvBid = null;
+  flashNext('Bokningen är flyttad till ' + fWhen(startOf(toS)) + '.' + (toS.type === 'grp' ? ' Abbe granskar flytten.' : ''));
+  go('mina-sidor');
+}
+function approve(fu, bid, msg){ return B.approve(fu, bid, msg); }
+function decline(fu, bid, msg){ return B.decline(fu, bid, msg); }
+function cancelSession(sid, reason, msg){ return B.cancelSession(sid, reason, msg); }
+
+/* ---------- Demoläge: allt sparas i webbläsaren, koden visas på skärmen ---------- */
+function makeDemo(){
+  const KEY = 'abbe-khalili-demo-v1';
+  let st = null, pending = null;
+  function seed(){
+    const out = {};
+    const add = (id, type, days, h, m, place, focus, aud) => { const d = new Date(); d.setDate(d.getDate() + days); d.setHours(h, m, 0, 0); out[id] = {type, date: ymd(d), time: hm(d), max: TYPES[type].max, place, focus, audience: aud, equipment: DEFAULT_EQ, status:'open', checked:false, test:true}; };
+    add('demo1','ind',1,17,0,'Testplan A','Utifrån spelarens behov','Alla åldrar');
+    add('demo2','grp',2,17,0,'Testplan B','Passningsspel och första touch','9–11 år');
+    add('demo3','duo',3,16,30,'Testplan A','Avslut','10–13 år');
+    add('demo4','grp',5,10,0,'Testplan B','Spelförståelse','12–14 år');
+    add('demo5','duo',6,11,0,'Testplan A','Teknik i hög fart','15 år och vuxna');
+    add('demo6','ind',7,18,0,'Testplan A','Utifrån spelarens behov','Alla åldrar');
+    return out;
+  }
+  function load(){ try { st = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (_){ st = null; } if (!st || !st.sessions) st = {sessions: seed(), families:{}, user:null, admin:false}; }
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (_){ } }
+  function computeCounts(){
+    const now = Date.now(), c = {};
+    for (const fu in st.families){ const bk = st.families[fu].bookings || {}; for (const id in bk){ const b = bk[id]; const k = b.sid; c[k] = c[k] || {used:0, confirmed:0, pending:0}; if (counts({st: b.status, hold: b.holdUntil, payBy: b.payBy}, now)) c[k].used += b.n; if (b.status === 'confirmed') c[k].confirmed += b.n; if (b.status === 'pending_review') c[k].pending += b.n; } }
+    return c;
+  }
+  function publish(){ save(); S.sessions = st.sessions; S.families = st.families; S.uid = st.user ? st.user.id : null; S.email = st.user ? st.user.contact : null; S.isAdmin = !!(st.user && st.admin); S.counts = computeCounts(); S.loaded = {s:true, t:true, f:true}; S.fresh = true; S.ready = true; }
+  function needUser(){ if (!st.user) throw userErr('Bekräfta med koden först.'); }
+  function fam(){ needUser(); const f = st.families[st.user.id]; if (!f) throw userErr('Fyll i dina uppgifter först.'); return f; }
+  function bk(fu, bid){ const f = st.families[fu]; const b = f && f.bookings && f.bookings[bid]; if (!b) throw userErr('Bokningen finns inte.'); return b; }
+  function own(bid){ needUser(); return bk(st.user.id, bid); }
+  function ownOrAdmin(fu, bid){ needUser(); if (fu !== st.user.id && !st.admin) throw userErr('Du har inte behörighet till bokningen.'); return bk(fu, bid); }
+  function needAdmin(){ if (!(st.user && st.admin)) throw userErr('Bara Abbe kan göra det här.'); }
+  function used(sid, exclude){ const now = Date.now(); let u = 0; for (const fu in st.families) for (const id in (st.families[fu].bookings || {})){ if (id === exclude) continue; const b = st.families[fu].bookings[id]; if (b.sid === sid && counts({st: b.status, hold: b.holdUntil, payBy: b.payBy}, now)) u += b.n; } return u; }
+  function addRefund(b, amount, reason){ b.refunds = b.refunds || {}; b.refunds[rid('r')] = {amount, status:'pending', reason, at: Date.now()}; }
+  function cancelS(sid, reason, msg){
+    Object.assign(st.sessions[sid], {status:'cancelled', cancelReason: reason, cancelMsg: msg || '', cancelledAt: Date.now(), checked:'cancelled'});
+    for (const fu in st.families) for (const id in (st.families[fu].bookings || {})){
+      const b = st.families[fu].bookings[id];
+      if (b.sid !== sid || ['cancelled','declined','session_cancelled'].indexOf(b.status) >= 0) continue;
+      const m = money(b); b.status = 'session_cancelled'; b.endedAt = Date.now();
+      if (m.remaining > 0) addRefund(b, m.remaining, 'Passet inställt');
+    }
+  }
+  const api = {
+    mode:'demo', canSms:true,
+    async init(){ load(); publish(); api.runChecks(); setInterval(() => { api.runChecks(); publish(); render(); }, 30000); },
+    async reload(){ publish(); },
+    async sendCode(via, contact){ const code = String(Math.floor(100000 + Math.random() * 900000)); pending = {contact: String(contact).toLowerCase(), code}; return {demoCode: code}; },
+    async verifyCode(via, contact, code){
+      if (!pending || pending.contact !== String(contact).toLowerCase() || pending.code !== String(code).trim()) throw userErr('Koden stämmer inte. Kontrollera och försök igen.');
+      let h = 0; for (const ch of pending.contact) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+      st.user = {id: 'u' + h.toString(36), contact: pending.contact}; st.admin = false; pending = null; publish();
+    },
+    async signOut(){ st.user = null; st.admin = false; publish(); },
+    toggleAdmin(){ if (!st.user) return; st.admin = !st.admin; publish(); },
+    async saveAccount(a){ needUser(); const f = st.families[st.user.id]; if (f) f.account = Object.assign({}, f.account, a); else st.families[st.user.id] = {account: Object.assign({}, a, {consentAt: Date.now()}), players:{}, bookings:{}, createdAt: Date.now()}; publish(); },
+    async savePlayer(pid, p){ const f = fam(); const id = pid || rid('p'); f.players[id] = Object.assign({}, f.players[id] || {createdAt: Date.now()}, p); publish(); return id; },
+    async removePlayer(pid){ const f = fam(); if (f.players[pid]) f.players[pid].removed = true; publish(); },
+    async book(sid, pids, wish){
+      const s = st.sessions[sid], now = Date.now(), f = fam();
+      if (!s || s.status !== 'open' || startOf(s) - BOOK_CLOSE <= now) throw userErr('Passet går inte att boka längre.');
+      const n = pids.length;
+      if (!n) throw userErr('Välj minst en spelare.');
+      if (s.type === 'ind' && n > 1) throw userErr('Individuell träning gäller en spelare.');
+      if (pids.some(p => !f.players[p] || f.players[p].removed)) throw userErr('Någon av spelarna finns inte.');
+      const mine = Object.values(f.bookings).filter(b => b.sid === sid && counts({st: b.status, hold: b.holdUntil, payBy: b.payBy}, now));
+      if (mine.some(b => (b.players || []).some(p => pids.indexOf(p) >= 0))) throw userErr('Någon av spelarna är redan bokad på passet.');
+      if (mine.reduce((a, b) => a + b.n, 0) + n > 3) throw userErr('Du kan boka högst 3 platser per pass.');
+      const u = used(sid);
+      if (u + n > s.max) throw userErr(s.max - u > 0 ? 'Det finns bara ' + (s.max - u) + ' lediga platser kvar.' : 'Passet hann bli fullbokat.');
+      const grp = s.type === 'grp', bid = rid('b'), price = TYPES[s.type].price;
+      f.bookings[bid] = {sid, type: s.type, players: pids.slice(), n, price, total: n * price, status: grp ? 'pending_review' : 'reserved', wish, createdAt: now, holdUntil: grp ? 0 : now + HOLD_MS, payBy: 0, pay:{status:'unpaid', amount:0}, refunds:{}};
+      publish(); return bid;
+    },
+    async rebook(bid){
+      const b = own(bid), s = st.sessions[b.sid], now = Date.now();
+      if (effStatus(b, now) !== 'expired') throw userErr('Bokningen kan inte reserveras igen.');
+      if (!s || s.status !== 'open' || startOf(s) - BOOK_CLOSE <= now) throw userErr('Passet går inte att boka längre.');
+      if (used(b.sid, bid) + b.n > s.max) throw userErr('Det finns inte längre plats för ' + b.n + ' spelare.');
+      Object.assign(b, {status:'reserved', holdUntil: now + HOLD_MS, pay:{status:'unpaid', amount:0}}); publish();
+    },
+    async startPay(bid){
+      const b = own(bid), now = Date.now(), es = effStatus(b, now);
+      if (es !== 'reserved' && es !== 'approved') throw userErr('Bokningen kan inte betalas just nu.');
+      b.pay = {status:'waiting', amount: b.total, at: now}; if (es === 'reserved') b.holdUntil = now + HOLD_MS; publish();
+    },
+    async simulatePaid(fu, bid){
+      const b = ownOrAdmin(fu, bid), now = Date.now(), es = effStatus(b, now);
+      if (es !== 'reserved' && es !== 'approved') throw userErr('Tiden för betalningen har gått ut.');
+      Object.assign(b, {pay:{status:'verified', amount: b.total, at: now}, status:'confirmed', holdUntil:0, payBy:0}); publish();
+    },
+    async verifyRefunds(fu, bid){ const b = ownOrAdmin(fu, bid); Object.values(b.refunds || {}).forEach(r => { r.status = 'verified'; r.verifiedAt = Date.now(); }); publish(); },
+    async cancel(bid, pids){
+      const b = own(bid), s = st.sessions[b.sid], now = Date.now(), es = effStatus(b, now);
+      if (ACTIVE.indexOf(es) < 0 || !s || now >= startOf(s)) throw userErr('Bokningen kan inte avbokas.');
+      const keep = (b.players || []).filter(p => pids.indexOf(p) < 0), rm = b.n - keep.length;
+      if (rm <= 0) throw userErr('Välj minst en spelare att avboka.');
+      const inTime = now <= startOf(s) - CANCEL_LIMIT, m = money(b);
+      const refund = (m.paid > 0 && inTime) ? Math.min(m.remaining, rm * b.price) : 0;
+      Object.assign(b, {players: keep, n: keep.length, total: keep.length * b.price});
+      if (!keep.length){ b.status = 'cancelled'; b.endedAt = now; }
+      if (refund > 0) addRefund(b, refund, keep.length ? 'Avbokning av ' + rm + ' spelare' : 'Avbokad i tid');
+      if (m.paid > 0 && !inTime) b.lateCancel = true;
+      publish(); return refund;
+    },
+    async move(bid, to){
+      const b = own(bid), from = st.sessions[b.sid], toS = st.sessions[to], now = Date.now(), es = effStatus(b, now);
+      if (['pending_review','approved','confirmed'].indexOf(es) < 0 || !from || now > startOf(from) - CANCEL_LIMIT) throw userErr('Bokningen kan inte flyttas längre.');
+      if (!toS || to === b.sid || toS.type !== b.type || toS.status !== 'open' || startOf(toS) - CANCEL_LIMIT <= now) throw userErr('Det passet går inte att flytta till.');
+      if (used(to, bid) + b.n > toS.max) throw userErr('Passet har inte längre plats för ' + b.n + ' spelare.');
+      Object.assign(b, {sid: to, status: toS.type === 'grp' ? 'pending_review' : (es === 'confirmed' ? 'confirmed' : b.status), movedFrom: from ? b.sid : null, payBy: 0, decisionMsg:''});
+      publish();
+    },
+    async approve(fu, bid, msg){
+      needAdmin(); const b = bk(fu, bid), s = st.sessions[b.sid], now = Date.now();
+      if (effStatus(b, now) !== 'pending_review') throw userErr('Anmälan är redan hanterad.');
+      const paid = money(b).paid > 0, st0 = startOf(s);
+      Object.assign(b, {status: paid ? 'confirmed' : 'approved', payBy: paid ? 0 : (now < st0 - CHECK_LIMIT ? st0 - CHECK_LIMIT : st0 - H), decisionMsg: msg || ''});
+      publish();
+    },
+    async decline(fu, bid, msg){
+      needAdmin(); const b = bk(fu, bid), m = money(b);
+      Object.assign(b, {status:'declined', endedAt: Date.now(), decisionMsg: msg || ''});
+      if (m.remaining > 0) addRefund(b, m.remaining, 'Anmälan avslagen');
+      publish();
+    },
+    async cancelSession(sid, reason, msg){ needAdmin(); if (!st.sessions[sid] || st.sessions[sid].status !== 'open') throw userErr('Passet är redan inställt.'); cancelS(sid, reason, msg); publish(); },
+    async setAttendance(fu, bid, pid, val){ needAdmin(); const b = bk(fu, bid); b.attended = Object.assign({}, b.attended, {[pid]: val}); publish(); },
+    async upsertSession(sid, d){
+      needAdmin();
+      const data = {type: d.type, date: d.date, time: d.time, max: d.max, place: d.place, focus: d.focus, audience: d.audience, equipment: d.equipment};
+      if (sid){ const old = st.sessions[sid]; if (!old) throw userErr('Passet finns inte.'); if (old.date !== d.date || old.time !== d.time) data.checked = false; Object.assign(old, data); }
+      else st.sessions[rid('s')] = Object.assign(data, {status:'open', checked:false});
+      publish();
+    },
+    async deleteSession(sid){
+      needAdmin();
+      for (const fu in st.families) for (const id in (st.families[fu].bookings || {})) if (st.families[fu].bookings[id].sid === sid) throw userErr('Passet har bokningar. Ställ in det i stället.');
+      delete st.sessions[sid]; publish();
+    },
+    runChecks(){
+      if (!st) return; const now = Date.now(); let changed = false;
+      for (const sid in st.sessions){
+        const s = st.sessions[sid]; if (s.status !== 'open' || s.checked) continue;
+        const st0 = startOf(s); if (now < st0 - CHECK_LIMIT || now >= st0) continue;
+        let conf = 0; for (const fu in st.families) for (const id in (st.families[fu].bookings || {})){ const b = st.families[fu].bookings[id]; if (b.sid === sid && b.status === 'confirmed') conf += b.n; }
+        const min = TYPES[s.type].min;
+        if (s.type === 'ind' || conf >= min) s.checked = 'ok'; else cancelS(sid, 'För få bekräftade spelare (' + conf + ' av minst ' + min + ')', '');
+        changed = true;
+      }
+      if (changed) publish();
+    }
+  };
+  return api;
+}
+
+/* ---------- Riktig databas: Supabase ---------- */
+function makeSupa(){
+  let sb = null, loading = null;
+  const ms = v => v ? new Date(v).getTime() : 0;
+  function toErr(e){
+    const m = (e && e.message) || '';
+    if (e && e.code === 'P0001') return userErr(m);
+    if (/expired|invalid/i.test(m) && /token|otp|code/i.test(m)) return userErr('Koden stämmer inte eller har gått ut. Skicka en ny kod.');
+    if (/rate limit|too many/i.test(m)) return userErr('För många koder på kort tid. Vänta en stund och försök igen.');
+    if (/signups not allowed|not authorized/i.test(m)) return userErr('Det gick inte att skicka koden till den adressen.');
+    return e;
+  }
+  async function q(p){ const res = await p; if (res.error) throw toErr(res.error); return res.data; }
+  async function call(fn, args){ const data = await q(sb.rpc(fn, args || {})); await api.reload(); return data; }
+  function mapSessions(rows){
+    const o = {};
+    rows.forEach(r => { const d = new Date(r.starts_at); o[r.id] = {type: r.type, date: ymd(d), time: hm(d), max: r.max, place: r.place, focus: r.focus, audience: r.audience, equipment: r.equipment, status: r.status, checked: r.checked || false, cancelReason: r.cancel_reason || '', cancelMsg: r.cancel_msg || '', test: !!r.test}; });
+    return o;
+  }
+  function mapFamilies(f, p, b, r){
+    const o = {}, byB = {};
+    f.forEach(x => { o[x.user_id] = {account:{name: x.name, phone: x.phone, email: x.email, role: x.role}, players:{}, bookings:{}}; });
+    p.forEach(x => { const t = o[x.user_id]; if (t) t.players[x.id] = {name: x.name, birthYear: x.birth_year, self: x.self, club: x.club, exp: x.exp, level: x.level, goals: x.goals || [], notes: x.notes, removed: x.removed, createdAt: ms(x.created_at)}; });
+    b.forEach(x => { const t = o[x.user_id]; if (!t) return; const bb = {sid: x.session_id, type: x.type, players: x.players || [], n: x.n, price: x.price, total: x.total, status: x.status, wish: x.wish && x.wish.mode ? x.wish : null, holdUntil: ms(x.hold_until), payBy: ms(x.pay_by), pay:{status: x.pay_status, amount: x.pay_amount, at: ms(x.paid_at)}, refunds:{}, decisionMsg: x.decision_msg || '', lateCancel: x.late_cancel, attended: x.attended || {}, createdAt: ms(x.created_at), endedAt: ms(x.ended_at), movedFrom: x.moved_from}; t.bookings[x.id] = bb; byB[x.id] = bb; });
+    r.forEach(x => { const bb = byB[x.booking_id]; if (bb) bb.refunds[x.id] = {amount: x.amount, status: x.status === 'verified' ? 'verified' : 'pending', reason: x.reason, at: ms(x.created_at)}; });
+    return o;
+  }
+  const api = {
+    mode:'live', canSms: !!CONFIG.sms,
+    async init(){
+      await loadScript(SUPA_JS);
+      sb = window.supabase.createClient(CONFIG.supabaseUrl, CONFIG.supabaseKey);
+      sb.auth.onAuthStateChange(() => { api.reload().catch(() => {}); });
+      await api.reload();
+      setInterval(() => { api.reload().catch(() => {}); }, 30000);
+    },
+    reload(){
+      if (loading) return loading;
+      loading = (async () => {
+        try {
+          const sess = (await sb.auth.getSession()).data.session, u = sess && sess.user;
+          S.uid = u ? u.id : null; S.email = u ? (u.email || u.phone || '') : null;
+          const since = new Date(Date.now() - 120 * 24 * H).toISOString();
+          const [rows, cnt] = await Promise.all([q(sb.from('sessions').select('*').gte('starts_at', since).order('starts_at')), q(sb.rpc('session_counts'))]);
+          S.sessions = mapSessions(rows || []);
+          const c = {}; (cnt || []).forEach(x => { c[x.session_id] = {used: x.used, confirmed: x.confirmed, pending: x.pending}; }); S.counts = c;
+          if (S.uid){
+            const [adm, f, p, b, r] = await Promise.all([q(sb.rpc('is_admin')), q(sb.from('families').select('*')), q(sb.from('players').select('*')), q(sb.from('bookings').select('*')), q(sb.from('refunds').select('*'))]);
+            S.isAdmin = !!adm; S.families = mapFamilies(f || [], p || [], b || [], r || []);
+          } else { S.isAdmin = false; S.families = {}; }
+          S.loaded = {s:true, t:true, f:true}; S.fresh = true; S.slow = false; S.err = null;
+        } catch (e){ console.warn(e); S.err = 'load'; S.loaded = {s:true, t:true, f:true}; }
+        finally { S.ready = true; loading = null; render(); }
+      })();
+      return loading;
+    },
+    async sendCode(via, contact){
+      if (via === 'sms') await q(sb.auth.signInWithOtp({phone: normPhone(contact)}));
+      else await q(sb.auth.signInWithOtp({email: String(contact).trim(), options:{shouldCreateUser:true}}));
+      return {};
+    },
+    async verifyCode(via, contact, code){
+      if (!code) throw userErr('Skriv in koden.');
+      if (via === 'sms') await q(sb.auth.verifyOtp({phone: normPhone(contact), token: code, type:'sms'}));
+      else await q(sb.auth.verifyOtp({email: String(contact).trim(), token: code, type:'email'}));
+      await api.reload();
+    },
+    async signOut(){ await sb.auth.signOut(); await api.reload(); },
+    async saveAccount(a){
+      const row = {user_id: S.uid, name: a.name, phone: a.phone || '', email: a.email || (S.email && S.email.indexOf('@') > 0 ? S.email : ''), role: a.role || 'vh'};
+      if (!me()) row.consent_at = new Date().toISOString();
+      await q(sb.from('families').upsert(row)); await api.reload();
+    },
+    async savePlayer(pid, p){
+      const row = {name: p.name, birth_year: p.birthYear, self: !!p.self, club: p.club || '', exp: p.exp, level: p.level, goals: p.goals || [], notes: p.notes || '', updated_at: new Date().toISOString()};
+      let id = pid;
+      if (pid) await q(sb.from('players').update(row).eq('id', pid));
+      else { const d = await q(sb.from('players').insert(Object.assign(row, {user_id: S.uid})).select('id').single()); id = d.id; }
+      await api.reload(); return id;
+    },
+    async removePlayer(pid){ await q(sb.from('players').update({removed:true}).eq('id', pid)); await api.reload(); },
+    book: (sid, pids, wish) => call('book', {p_session: sid, p_players: pids, p_wish: wish}),
+    rebook: bid => call('rebook', {p_booking: bid}),
+    startPay: bid => call('start_pay', {p_booking: bid}),
+    simulatePaid: (fu, bid) => call('simulate_paid', {p_booking: bid}),
+    verifyRefunds: (fu, bid) => call('verify_refunds', {p_booking: bid}),
+    cancel: (bid, pids) => call('cancel_booking', {p_booking: bid, p_players: pids}),
+    move: (bid, to) => call('move_booking', {p_booking: bid, p_to: to}),
+    approve: (fu, bid, msg) => call('admin_approve', {p_booking: bid, p_msg: msg || ''}),
+    decline: (fu, bid, msg) => call('admin_decline', {p_booking: bid, p_msg: msg || ''}),
+    cancelSession: (sid, reason, msg) => call('admin_cancel_session', {p_session: sid, p_reason: reason, p_msg: msg || ''}),
+    setAttendance: (fu, bid, pid, val) => call('admin_set_attendance', {p_booking: bid, p_player: pid, p_val: val}),
+    upsertSession: (sid, d) => call('admin_upsert_session', {p_id: sid || null, p_data: {type: d.type, starts_at: new Date(d.date + 'T' + d.time + ':00').toISOString(), max: d.max, place: d.place, focus: d.focus, audience: d.audience, equipment: d.equipment}}),
+    deleteSession: sid => call('admin_delete_session', {p_id: sid}),
+    runChecks(){}
+  };
+  return api;
+}
+
+const B = (CONFIG.supabaseUrl && CONFIG.supabaseKey) ? makeSupa() : makeDemo();
+
+/* ---------- Gemensamma bitar ---------- */
+function notice(title, text, extra){
+  return '<div class="wrap"><div class="card stack" style="max-width:640px"><h1 class="display h2">' + title + '</h1><p class="muted">' + text + '</p>' + (extra || '') + '</div></div>';
+}
+function loadingView(){ return '<div class="wrap loading">Hämtar bokningar …</div>'; }
+function dataNote(){
+  if (S.err) return '<div class="box t-bad">Bokningsdatan kunde inte läsas. Ladda om sidan.</div>';
+  if (S.slow && !S.fresh) return '<div class="box t-warn">Datan går inte att nå just nu. Det som visas kan vara gammalt.</div>';
+  return '';
+}
+function gate(needAccount){
+  if (!S.ready || !isLoaded()) return loadingView();
+  if (S.err && !Object.keys(S.sessions).length) return notice('Sidan kunde inte laddas', 'Kontrollera din uppkoppling och ladda om sidan.');
+  if (!S.uid) return S.route.name === 'boka' ? '' : loginView(location.hash.replace('#', '') || 'mina-sidor');
+  if (needAccount && (!me() || !me().account)) return notice('Inga uppgifter än', 'Boka ett pass först, så sparas dina uppgifter här.', '<a class="btn btn-primary" href="#kalender">Till kalendern</a>');
+  return '';
+}
+function clearCode(){ S.ui.codeTo = null; S.ui.codeCtx = null; S.ui.codeVia = null; S.ui.demoCode = null; S.ui.codeVal = ''; }
+function codeBox(act, arg, label){
+  return '<div class="stack-s"><p class="small">Vi har skickat en kod till <strong>' + esc(S.ui.codeTo) + '</strong>.</p>' +
+    (S.ui.demoCode ? '<p class="box t-warn small">Demoläge: koden är <strong class="tnum">' + esc(S.ui.demoCode) + '</strong></p>' : '') +
+    '<div class="field"><label for="code-in">Kod</label><input class="input tnum" id="code-in" inputmode="numeric" autocomplete="one-time-code" maxlength="8" value="' + esc(S.ui.codeVal || '') + '"></div>' +
+    '<button class="btn btn-primary btn-block" data-act="' + act + '" data-arg="' + esc(arg) + '"' + (S.busy ? ' disabled' : '') + '>' + label + '</button>' +
+    '<button class="linkbtn" data-act="code-reset">Fel adress eller ingen kod? Skicka en ny</button></div>';
+}
+function loginView(ret, title){
+  const sent = S.ui.codeTo && S.ui.codeCtx === 'login-' + ret;
+  const body = sent ? codeBox('login-verify', ret, 'Logga in')
+    : '<div class="field"><label for="l-contact">' + (B.canSms ? 'E-post eller mobilnummer' : 'E-post') + '</label><input class="input" id="l-contact" ' + (B.canSms ? '' : 'type="email" ') + 'autocomplete="email" value="' + esc(S.ui.loginVal || '') + '"></div>' +
+      '<button class="btn btn-primary btn-block" data-act="login-send" data-ret="' + esc(ret) + '"' + (S.busy ? ' disabled' : '') + '>Skicka kod</button>';
+  return '<div class="wrap"><div class="card stack" style="max-width:520px"><h1 class="display h2">' + (title || 'Mina sidor') + '</h1><p class="muted">Inget lösenord eller konto behövs. Vi skickar en engångskod till dig.</p>' + body +
+    (B.mode === 'demo' && ret === 'admin' ? '<p class="small muted">Demoläge: logga in med valfri e-post och tryck sedan på "Demo: visa som Abbe" längst ner på sidan.</p>' : '') + '</div></div>';
+}
+function bookButton(sid, ok, grp){
+  const label = S.busy ? 'Sparar …' : grp ? 'Skicka anmälan' : 'Reservera och gå till betalning';
+  if (S.uid) return '<button class="btn btn-primary btn-block" data-act="book" data-sid="' + esc(sid) + '"' + (ok ? '' : ' disabled') + '>' + label + '</button>';
+  if (S.ui.codeTo && S.ui.codeCtx === 'boka-' + sid) return codeBox('book-verify', sid, grp ? 'Bekräfta och skicka anmälan' : 'Bekräfta och boka');
+  return '<p class="small muted">Vi skickar en kod som du skriver in här. Först då räknas bokningen, så ingen kan boka i någon annans namn.</p>' +
+    '<button class="btn btn-primary btn-block" data-act="book-send" data-sid="' + esc(sid) + '" data-via="email"' + (ok && !S.busy ? '' : ' disabled') + '>Skicka kod till min e-post</button>' +
+    (B.canSms ? '<button class="btn btn-ghost btn-block" data-act="book-send" data-sid="' + esc(sid) + '" data-via="sms"' + (ok && !S.busy ? '' : ' disabled') + '>Skicka kod med sms</button>' : '<p class="small muted">Kod med sms kommer snart.</p>');
+}
+
+function timeline(items){
+  const pre = {done:'Klart: ', now:'Pågår: ', next:'Kommer: '};
+  return '<ol class="tl">' + items.map(i => '<li class="tl-' + i.state + '"><span class="tl-dot" aria-hidden="true">' + (i.state === 'done' ? '✓' : '') + '</span><span><span class="sr">' + pre[i.state] + '</span><span class="tl-t">' + i.text + '</span>' + (i.sub ? '<span class="small muted d-block">' + i.sub + '</span>' : '') + '</span></li>').join('') + '</ol>';
+}
+function pitchSvg(){
+  return '<svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="20" y="20" width="360" height="220"/><line x1="200" y1="20" x2="200" y2="240"/><circle cx="200" cy="130" r="38"/><rect x="20" y="75" width="58" height="110"/><rect x="322" y="75" width="58" height="110"/><rect x="20" y="105" width="20" height="50"/><rect x="360" y="105" width="20" height="50"/></svg>';
+}
+function sessionRow(id, s, now){
+  const st = startOf(s), d = new Date(st), state = sessionState(id, s, now), mn = minNote(s, state.stats, now);
+  const pct = state.stats.max ? Math.min(100, Math.round(state.stats.used / state.stats.max * 100)) : 0;
+  const open = state.code === 'open';
+  return '<article class="card srow' + (open ? '' : ' is-dim') + '">' +
+    '<div class="sdate"><span class="sd-day">' + DAYS[d.getDay()] + '</span><span class="sd-num">' + d.getDate() + '</span><span class="sd-mon">' + MON[d.getMonth()] + '</span></div>' +
+    '<div class="smain"><div class="row" style="gap:8px 12px"><span class="stime">' + fTime(st) + '–' + fTime(st + H) + '</span>' + typeTag(s.type) + (s.test ? chip('Testpass','neutral') : '') + '</div>' +
+      '<div style="font-weight:600">' + esc(s.focus || TYPES[s.type].name) + '</div>' +
+      '<div class="muted small">' + esc(s.place || 'Plats meddelas') + (s.audience ? ' · ' + esc(s.audience) : '') + '</div></div>' +
+    '<div class="sspots">' + (open ? '<div style="font-weight:600">' + state.label + '</div>' : chip(state.label, state.tone)) +
+      (s.type !== 'ind' && state.code !== 'cancelled' ? '<div class="bar"><i style="width:' + pct + '%"></i></div>' : '') +
+      (mn ? '<div class="small ' + (mn.tone === 'muted' ? 'muted' : '') + '">' + (mn.tone === 'muted' ? esc(mn.text) : chip(mn.text, mn.tone)) + '</div>' : '') + '</div>' +
+    '<div class="sact"><span class="sprice">' + kr(TYPES[s.type].price) + (s.type !== 'ind' ? ' <span class="small muted">/ spelare</span>' : '') + '</span>' +
+      '<a class="btn btn-sm ' + (open ? 'btn-primary' : 'btn-ghost') + '" href="#pass-' + esc(id) + '">' + (open ? 'Visa pass' : 'Visa') + '</a></div>' +
+  '</article>';
+}
+
+/* ---------- Ramen runt sidan ---------- */
+function layout(inner){
+  const r = S.route.name, isAdm = r.indexOf('admin') === 0;
+  const cur = names => names.indexOf(r) >= 0 ? ' aria-current="page"' : '';
+  let nav = '';
+  if (!isAdm) nav += '<a class="nav-a" href="#start"' + cur(['start']) + '>Start</a><a class="nav-a" href="#kalender"' + cur(['kalender','pass','boka']) + '>Kalender</a><a class="nav-a" href="#mina-sidor"' + cur(['mina-sidor','konto','spelare','betala','avboka','flytta']) + '>Mina sidor</a>';
+  if (S.isAdmin) nav += '<div class="seg" role="group" aria-label="Visa som"><a href="#start"' + (!isAdm ? ' class="on" aria-current="true"' : '') + '>Kundvy</a><a href="#admin"' + (isAdm ? ' class="on" aria-current="true"' : '') + '>Adminpanel</a></div>';
+  if (S.uid) nav += '<button class="linkbtn" data-act="logout">Logga ut</button>';
+  const fl = S.flash ? '<div class="wrap"><div class="flash t-' + S.flash.tone + '" role="status"><span>' + esc(S.flash.text) + '</span><button class="linkbtn" data-act="flash-x">Stäng</button></div></div>' : '';
+  const bar = B.mode === 'demo'
+    ? 'Demoläge – bokningar sparas bara i den här webbläsaren och koden visas på skärmen. Betalningar är simulerade.'
+    : 'Testversion – betalningar och återbetalningar är simulerade.';
+  const demoTools = B.mode === 'demo' && S.uid ? '<button class="linkbtn" data-act="demo-admin">' + (S.isAdmin ? 'Demo: visa som kund' : 'Demo: visa som Abbe (admin)') + '</button>' : '';
+  return '<div class="testbar"><div class="wrap">' + bar + '</div></div>' +
+    '<header class="top"><div class="wrap top-in"><a href="#start" class="brand">Abbe Khalili</a><nav class="nav" aria-label="Huvudmeny">' + nav + '</nav></div></header>' +
+    fl + '<main id="main">' + inner + '</main>' +
+    '<footer class="foot"><div class="wrap row between small muted"><span>© Abbe Khalili</span><span class="row" style="gap:4px 20px">' + demoTools + '<a href="#villkor">Bokningsvillkor och integritet</a></span></div></footer>';
+}
+function currentView(){
+  const r = S.route;
+  if (r.name.indexOf('admin') === 0){
+    if (!S.ready) return loadingView();
+    if (!S.isAdmin) return S.uid ? notice('Adminpanelen är bara för Abbe', 'Du är inloggad, men har inte behörighet att se adminpanelen.', '<a class="btn btn-ghost" href="#start">Till startsidan</a>') : loginView('admin', 'Logga in som Abbe');
+    return adminShell(r);
+  }
+  switch (r.name){
+    case 'kalender': return viewKalender();
+    case 'pass': return viewPass(r.arg);
+    case 'boka': return viewBoka(r.arg);
+    case 'betala': return viewBetala(r.arg);
+    case 'mina-sidor': return viewMina();
+    case 'konto': return viewKonto();
+    case 'spelare': return r.arg ? viewSpelare(r.arg) : viewMina();
+    case 'avboka': return viewAvboka(r.arg);
+    case 'flytta': return viewFlytta(r.arg);
+    case 'villkor': return viewVillkor();
+    default: return viewStart();
+  }
+}
+
+/* ---------- Startsida ---------- */
+function viewStart(){
+  const now = Date.now();
+  const open = upcomingAll(now).filter(x => sessionState(x.id, x.s, now).code === 'open');
+  const next = open[0];
+  const formCard = t => {
+    const T = TYPES[t];
+    const desc = t === 'ind' ? 'Allt fokus på en spelare. Passet byggs utifrån spelarprofilen.' : t === 'duo' ? 'Träna med en kompis eller ett syskon. Boka tillsammans eller ta en ledig plats.' : 'Abbe sätter ihop grupper med spelare på ungefär samma nivå och i liknande ålder.';
+    const ex = t === 'ind' ? '1 spelare · ' + kr(599) : t === 'duo' ? '2 spelare · ' + kr(698) + ' · 3 spelare · ' + kr(1047) : 'Blir av med minst 6 spelare · 6 spelare = ' + kr(1200) + ' totalt';
+    return '<article class="card fcard"><div class="row between"><h3>' + T.name + '</h3><span class="chip ty-' + t + '">' + T.players + '</span></div><div class="row" style="gap:8px;align-items:baseline"><span class="big" style="font-size:52px">' + kr(T.price) + '</span><span class="muted">per spelare</span></div><p class="muted">' + desc + '</p><p class="fex">' + ex + '</p></article>';
+  };
+  return '<div class="wrap">' +
+    '<section class="hero"><div><p class="eyebrow">Fotbollsträning · 60 minuter per pass</p><h1 class="display h1">Träning som utgår från din nivå</h1>' +
+      '<p class="lead mt-m">Individuell träning, duo/trio och gruppträning med Abbe Khalili. Hitta ett pass i kalendern och boka direkt – för dig själv eller ditt barn.</p>' +
+      '<div class="row mt-l"><a class="btn btn-primary" href="#kalender">Se lediga pass</a><button class="btn btn-ghost" data-act="scroll" data-to="sa-funkar">Så funkar bokningen</button></div></div>' +
+      '<div class="stack"><div class="photo">' + pitchSvg() + '<span>[Foto på Abbe]</span></div>' +
+      (next ? '<a class="card nextcard" href="#pass-' + esc(next.id) + '"><span><span class="small muted d-block">Nästa lediga pass</span><strong>' + fDay(next.st) + ' · ' + fTime(next.st) + ' · ' + TYPES[next.s.type].short + '</strong></span><span aria-hidden="true">→</span></a>' : '') +
+      '</div></section>' +
+    '<section class="sec cols" id="om-abbe"><div class="c-main stack"><h2 class="display h2">Om Abbe</h2>' +
+      '<p class="lead">Abbe Khalili är född och uppvuxen i Helsingborg och började spela i Högaborgs BK. Han har spelat i Allsvenskan med Helsingborgs IF och Hammarby och varit proffs i flera år i Turkiet och på Cypern.</p>' +
+      '<p class="muted">Nu delar han med sig av det han har lärt sig till spelare i alla åldrar och på alla nivåer.</p></div>' +
+      '<aside class="c-side card fact" aria-label="Faktaruta om Abbe Khalili"><div class="fact-h">Faktaruta</div><dl>' +
+      [['Namn','Abdul "Abbe" Khalili'],['Uppvuxen','Helsingborg'],['Position','Central mittfältare'],['Moderklubb','Högaborgs BK'],['Klubbar i Sverige','Helsingborgs IF, IFK Värnamo, Hammarby IF'],['Utomlands','Mersin İdmanyurdu, Gençlerbirliği och Kasımpaşa i Turkiet, Olympiakos Nicosia på Cypern'],['Landslag','A-landskamp 2015 · U21-landslaget 2014–2015']].map(r => '<dt>' + r[0] + '</dt><dd>' + r[1] + '</dd>').join('') +
+      '<dt>Meriter</dt><dd><span class="row" style="gap:6px"><span class="chip gold">EM-guld U21 2015</span><span class="chip gold">Svenska cupen 2021</span></span></dd>' +
+      '</dl></aside></section>' +
+    '<section class="sec"><div class="sec-h"><h2 class="display h2">Välj träningsform</h2><p class="muted">Alla pass är 60 minuter. Tider och platser står på varje pass.</p></div><div class="forms">' + ['ind','duo','grp'].map(formCard).join('') + '</div></section>' +
+    '<section class="sec" id="traningen"><div class="sec-h"><h2 class="display h2">Träning utifrån spelarens behov</h2></div>' +
+      '<p class="lead" style="margin-bottom:28px">Varje pass är 60 minuter och utgår från vad spelaren behöver bli bättre på. Antingen väljer spelaren själv vad passet ska handla om, eller så låter hen Abbe välja.</p>' +
+      '<div class="choose">' +
+        '<div class="card stack-s"><span class="choose-k">Spelaren väljer</span><h3>Du bestämmer fokus</h3><p class="muted">När du bokar väljer du vad du vill träna på, till exempel avslut, snabbhet eller passningar. Har du något särskilt du vill jobba med skriver du det också.</p></div>' +
+        '<div class="card stack-s"><span class="choose-k">Abbe väljer</span><h3>Abbe bestämmer fokus</h3><p class="muted">Du låter Abbe välja. Han utgår från spelarprofilen och det han ser på planen, och lägger fokus där spelaren har mest att vinna just nu.</p></div>' +
+      '</div>' +
+      '<h3 class="mt-l">Så fungerar det i de olika träningsformerna</h3><div class="adapt">' + [
+        ['ind','Hela passet byggs kring det spelaren eller Abbe har valt. Tempo och svårighet ändras under passet efter hur spelaren svarar.'],
+        ['duo','Varje spelare kan önska fokus. Abbe väger ihop önskemålen så att passet ger något till alla.'],
+        ['grp','Abbe väljer passets fokus utifrån gruppen och tar med spelarnas önskemål när han planerar. Grupperna sätts ihop efter nivå och ålder.']
+      ].map(x => '<div class="stack-s"><div>' + typeTag(x[0]) + '</div><p class="muted">' + x[1] + '</p></div>').join('') + '</div></section>' +
+    '<section class="sec"><div class="sec-h"><h2 class="display h2">Kommande pass</h2><a href="#kalender" style="font-weight:600">Hela kalendern →</a></div>' + dataNote() +
+      (!isLoaded() ? '<div class="empty">Hämtar pass …</div>' : open.length ? '<div class="slist">' + open.slice(0, 3).map(x => sessionRow(x.id, x.s, now)).join('') + '</div>' : '<div class="empty">Inga lediga pass just nu. Titta in igen snart.</div>') + '</section>' +
+    '<section class="sec" id="sa-funkar"><div class="sec-h"><h2 class="display h2">Så funkar bokningen</h2></div><ol class="steps">' +
+      [['Välj pass','Hitta ett pass i kalendern som passar dig eller ditt barn.'],['Fyll i dina uppgifter','Namn, telefon eller e-post och en kort spelarprofil. Inget konto behövs, och bara Abbe ser profilen.'],['Välj fokus','Välj vad ni vill träna på, eller låt Abbe välja. Du ser pris och totalsumma innan du betalar.'],['Betala med Swish','Gruppanmälningar granskas först av Abbe. Du betalar när platsen är godkänd.']].map((x, i) => '<li><span class="stepn">' + (i + 1) + '</span><h3>' + x[0] + '</h3><p class="muted">' + x[1] + '</p></li>').join('') + '</ol></section>' +
+    '<section class="sec"><div class="sec-h"><h2 class="display h2">Bokningsvillkor i korthet</h2><a href="#villkor" style="font-weight:600">Hela villkoren →</a></div><div class="forms">' +
+      '<div class="card stack-s"><h3>Avbokning och flytt</h3><p class="muted">Avboka eller flytta till ett annat pass senast 12 timmar före start. Avbokar du i tid får du full återbetalning. Senare avbokning återbetalas inte.</p></div>' +
+      '<div class="card stack-s"><h3>Inställda pass</h3><p class="muted">Gruppträning kräver minst 6 bekräftade spelare och duo/trio minst 2, räknat 24 timmar före start. Annars ställs passet in.</p></div>' +
+      '<div class="card stack-s"><h3>Återbetalning</h3><p class="muted">Ställs ett pass in får du tillbaka hela beloppet du betalat.</p></div></div></section>' +
+  '</div>' +
+  '<section class="band" id="kontakt"><div class="wrap"><div class="stack-s"><h2 class="display h2">Kontakt</h2><div class="row muted" style="gap:8px 28px"><span>[Telefon]</span><span>[E-post]</span><span>[Instagram]</span></div></div><a class="btn btn-bib" href="#kalender">Se lediga pass</a></div></section>';
+}
+
+/* ---------- Kalender ---------- */
+function viewKalender(){
+  const now = Date.now(), f = S.filter;
+  const list = upcomingAll(now).filter(x => f === 'alla' || x.s.type === f);
+  const fl = [['alla','Alla'],['ind','Individuell'],['duo','Duo/trio'],['grp','Gruppträning']];
+  return '<div class="wrap stack-l"><div><h1 class="display h1">Kommande pass</h1><p class="lead mt-s">Alla pass är 60 minuter. Välj träningsform för att filtrera.</p></div>' +
+    '<div class="row" role="group" aria-label="Filtrera på träningsform">' + fl.map(([k, l]) => '<button class="fbtn" data-act="filter" data-f="' + k + '" aria-pressed="' + (f === k) + '">' + l + '</button>').join('') + '</div>' + dataNote() +
+    (!isLoaded() ? '<div class="empty">Hämtar pass …</div>' : list.length ? '<div class="slist">' + list.map(x => sessionRow(x.id, x.s, now)).join('') + '</div>' : '<div class="empty">' + (f === 'alla' ? 'Abbe har inte lagt ut några pass än.' : 'Inga pass av den här typen just nu.') + '</div>') +
+  '</div>';
+}
+
+/* ---------- Passida ---------- */
+function viewPass(sid){
+  const s = S.sessions[sid];
+  if (!s || !TYPES[s.type]) return isLoaded() ? notice('Passet finns inte', 'Det kan ha tagits bort.', '<a class="btn btn-ghost" href="#kalender">Till kalendern</a>') : loadingView();
+  const now = Date.now(), st = startOf(s), T = TYPES[s.type], state = sessionState(sid, s, now), mn = minNote(s, state.stats, now);
+  const pct = state.stats.max ? Math.round(state.stats.used / state.stats.max * 100) : 0;
+  let cta;
+  if (state.code === 'open') cta = '<a class="btn btn-primary btn-block" href="#boka-' + esc(sid) + '">' + (s.type === 'grp' ? 'Anmäl till passet' : 'Boka plats') + '</a>';
+  else cta = '<span class="btn btn-block btn-ghost is-off" aria-disabled="true">' + state.label + '</span>';
+  const priceRows = s.type === 'duo' ? '<div class="sum mt-s small"><div class="kv"><span>2 spelare tillsammans</span><strong>' + kr(698) + '</strong></div><div class="kv"><span>3 spelare tillsammans</span><strong>' + kr(1047) + '</strong></div></div>' : s.type === 'grp' ? '<p class="small mt-s">6 spelare = ' + kr(1200) + ' totalt</p>' : '';
+  return '<div class="wrap stack-l"><a href="#kalender" class="linkbtn">← Kalender</a>' +
+    '<div class="cols"><div class="c-main stack">' +
+      '<div class="row">' + typeTag(s.type) + (s.test ? chip('Testpass','neutral') : '') + (state.code !== 'open' ? chip(state.label, state.tone) : '') + '</div>' +
+      '<h1 class="display h1">' + esc(s.focus || T.name) + '</h1>' +
+      (s.status === 'cancelled' ? '<div class="box t-bad"><strong>Passet är inställt.</strong> ' + esc(s.cancelReason || '') + (s.cancelMsg ? '<br>Meddelande från Abbe: ' + esc(s.cancelMsg) : '') + '</div>' : '') +
+      '<dl class="dl card"><dt>Datum</dt><dd>' + fDayLong(st) + '</dd><dt>Tid</dt><dd>' + fTime(st) + '–' + fTime(st + H) + ' (60 min)</dd><dt>Plats</dt><dd>' + esc(s.place || 'Meddelas') + '</dd><dt>Målgrupp</dt><dd>' + esc(s.audience || 'Alla') + '</dd><dt>Träningsform</dt><dd>' + T.name + '</dd></dl>' +
+      '<section class="stack-s"><h2 style="margin:0;font-size:18px">Ta med</h2><p class="muted">' + esc(s.equipment || DEFAULT_EQ) + '</p></section>' +
+      '<section class="stack-s"><h2 style="margin:0;font-size:18px">Fokus på passet</h2><p class="muted">' + (s.type === 'grp' ? 'Abbe väljer passets fokus utifrån gruppen. Du kan lämna önskemål när du anmäler dig.' : 'När du bokar väljer du vad du vill träna på, eller låter Abbe välja utifrån spelarprofilen.') + '</p></section>' +
+      (s.type === 'grp' ? '<section class="stack-s"><h2 style="margin:0;font-size:18px">Så funkar gruppträning</h2><p class="muted">Abbe granskar alla anmälningar för att sätta ihop grupper med spelare på ungefär samma nivå och i liknande ålder. Du betalar först när anmälan är godkänd.</p></section>' : '') +
+    '</div><aside class="c-side card stack">' +
+      '<div class="row" style="gap:8px;align-items:baseline"><span class="big">' + kr(T.price) + '</span><span class="muted">' + (s.type === 'ind' ? 'för passet' : 'per spelare') + '</span></div>' + priceRows +
+      (s.type !== 'ind' && s.status !== 'cancelled' ? '<div><div class="kv"><strong>Platser</strong><span>' + state.stats.free + ' av ' + state.stats.max + ' kvar</span></div><div class="bar"><i style="width:' + pct + '%"></i></div>' + (mn ? '<p class="small muted">' + esc(mn.text) + (mn.tone === 'muted' ? '. Räknas 24 timmar före start.' : '') + '</p>' : '') + '</div>' : '') +
+      (state.code === 'open' || state.code === 'full' ? '<p class="small muted">Avboka eller flytta senast ' + fWhen(st - CANCEL_LIMIT) + ' (12 timmar före start). Avbokar du i tid får du full återbetalning.</p>' : '') +
+      cta + (s.type === 'duo' && state.code === 'open' ? '<p class="small muted">Bokar du flera spelare väljer du dem i nästa steg.</p>' : '') +
+    '</aside></div></div>';
+}
+
+/* ---------- Gästbokning: uppgifter och spelare utan konto ---------- */
+function guestBlock(withConsent){
+  const key = 'guest';
+  return '<form class="card stack" style="max-width:620px" data-form="noop" data-key="guest"><div><h2 style="margin:0;font-size:20px">Dina uppgifter</h2><p class="small muted mt-s">Inget konto behövs. Fyll i telefon eller e-post, minst en av dem, så att Abbe kan nå dig.</p></div>' +
+    '<div class="field"><label for="g-name">Ditt namn</label><input class="input" id="g-name" name="name" autocomplete="name" value="' + esc(dv(key, 'name', '')) + '"></div>' +
+    '<div class="grid2"><div class="field"><label for="g-phone">Telefon</label><input class="input" id="g-phone" name="phone" type="tel" autocomplete="tel" value="' + esc(dv(key, 'phone', '')) + '"></div>' +
+    '<div class="field"><label for="g-email">E-post</label><input class="input" id="g-email" name="email" type="email" autocomplete="email" value="' + esc(dv(key, 'email', '')) + '"></div></div>' +
+    (withConsent ? '<label class="check" for="g-consent"><input type="checkbox" id="g-consent" name="consent" value="1"' + (dv(key, 'consent', '') ? ' checked' : '') + '><span>Jag godkänner att uppgifterna sparas enligt <a href="#villkor">integritetstexten</a>. Lägger jag till barn är jag vårdnadshavare för dem.</span></label>' : '') +
+    '<p class="small muted">Du bekräftar bokningen med en kod som vi skickar till dig.</p></form>';
+}
+function readGuest(){
+  const v = id => { const el = document.getElementById(id); return el ? el.value : ''; };
+  const d = S.drafts.guest || {};
+  const name = String(v('g-name') || d.name || '').trim(), phone = String(v('g-phone') || d.phone || '').trim(), email = String(v('g-email') || d.email || '').trim();
+  if (!name) throw userErr('Skriv ditt namn.');
+  if (!phone && !email) throw userErr('Fyll i telefon eller e-post så att Abbe kan nå dig.');
+  if (email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) throw userErr('Kontrollera e-postadressen.');
+  return {name, phone, email};
+}
+function readPlayer(fd){
+  const name = String(fd.get('name') || '').trim(), by = String(fd.get('by') || '').trim(), year = new Date().getFullYear();
+  if (!name) throw userErr('Skriv spelarens förnamn.');
+  if (!/^\d{4}$/.test(by) || Number(by) < 1940 || Number(by) > year) throw userErr('Skriv spelarens födelseår med fyra siffror, till exempel 2014.');
+  if (!fd.get('who')) throw userErr('Välj vem profilen gäller.');
+  if (!fd.get('exp')) throw userErr('Välj spelarens erfarenhet.');
+  if (!fd.get('level')) throw userErr('Välj spelarens nuvarande nivå.');
+  return {name, birthYear: Number(by), self: fd.get('who') === 'jag', club: String(fd.get('club') || '').trim(), exp: String(fd.get('exp')), level: String(fd.get('level')), goals: fd.getAll('goals').map(String), notes: String(fd.get('notes') || '').trim(), updatedAt: Date.now()};
+}
+function playerFieldsHtml(key, p, idp, selfDefault, nameDefault){
+  const who = dv(key, 'who', selfDefault), exp = dv(key, 'exp', p.exp || ''), level = dv(key, 'level', p.level || '');
+  const gv = dv(key, 'goals', p.goals || []), goals = Array.isArray(gv) ? gv : [gv];
+  const r = (name, v, l, curV) => '<label class="opt" for="' + idp + '-' + name + '-' + v + '"><input type="radio" id="' + idp + '-' + name + '-' + v + '" name="' + name + '" value="' + v + '"' + (curV === v ? ' checked' : '') + '>' + l + '</label>';
+  return '<fieldset><legend>Vem gäller profilen?</legend><div class="opts">' + r('who', 'jag', 'Mig själv', who) + r('who', 'barn', 'Mitt barn', who) + '</div></fieldset>' +
+    '<div class="grid2"><div class="field"><label for="' + idp + '-name">Spelarens förnamn</label><input class="input" id="' + idp + '-name" name="name" value="' + esc(dv(key, 'name', nameDefault || p.name || '')) + '"></div>' +
+    '<div class="field"><label for="' + idp + '-by">Födelseår</label><input class="input" id="' + idp + '-by" name="by" inputmode="numeric" maxlength="4" placeholder="ÅÅÅÅ" value="' + esc(dv(key, 'by', p.birthYear || '')) + '"></div></div>' +
+    '<div class="field"><label for="' + idp + '-club">Klubb och lag <span class="hint">(valfritt)</span></label><input class="input" id="' + idp + '-club" name="club" placeholder="T.ex. klubbens namn, P13" value="' + esc(dv(key, 'club', p.club || '')) + '"></div>' +
+    '<fieldset><legend>Erfarenhet</legend><div class="opts col">' + Object.entries(EXP).map(([k, l]) => r('exp', k, l, exp)).join('') + '</div></fieldset>' +
+    '<fieldset><legend>Nuvarande nivå</legend><div class="opts col">' + Object.entries(LEVEL).map(([k, l]) => r('level', k, l, level)).join('') + '</div></fieldset>' +
+    '<fieldset><legend>Vad vill spelaren utveckla? <span class="hint">Välj gärna flera</span></legend><div class="opts">' + GOALS.map((gl, i) => '<label class="opt pill" for="' + idp + '-goal-' + i + '"><input type="checkbox" id="' + idp + '-goal-' + i + '" name="goals" value="' + esc(gl) + '"' + (goals.indexOf(gl) >= 0 ? ' checked' : '') + '>' + esc(gl) + '</label>').join('') + '</div></fieldset>' +
+    '<div class="field"><label for="' + idp + '-notes">Något mer Abbe bör veta? <span class="hint">(valfritt, t.ex. position eller mål med träningen)</span></label><textarea class="input" id="' + idp + '-notes" name="notes">' + esc(dv(key, 'notes', p.notes || '')) + '</textarea></div>';
+}
+async function saveInlinePlayer(){
+  const f = document.getElementById('newp-form'); if (!f) return null;
+  const p = readPlayer(new FormData(f));
+  if (!me() || !me().account) await B.saveAccount(Object.assign(readGuest(), {role: p.self ? 'spelare' : 'vh'}));
+  const pid = await B.savePlayer(null, p);
+  delete S.drafts.guest; delete S.drafts.newp;
+  return pid;
+}
+
+/* ---------- Bokning ---------- */
+function viewBoka(sid){
+  const g = gate(false); if (g) return g;
+  const s = S.sessions[sid];
+  if (!s || !TYPES[s.type]) return notice('Passet finns inte', 'Det kan ha tagits bort.', '<a class="btn btn-ghost" href="#kalender">Till kalendern</a>');
+  const now = Date.now(), state = sessionState(sid, s, now), st = startOf(s), T = TYPES[s.type];
+  if (state.code !== 'open') return notice('Passet går inte att boka', 'Status: ' + state.label + '.', '<a class="btn btn-ghost" href="#kalender">Till kalendern</a>');
+  const fam = me(), hasAcct = !!(fam && fam.account), players = activePlayers(fam), elig = eligibleFor(sid), sel = effectiveSel(sid, elig);
+  const capN = s.type === 'ind' ? 1 : state.stats.free;
+  const n = players.length ? sel.length : 1, total = n * T.price, tooMany = n > capN;
+  const grp = s.type === 'grp';
+  let list;
+  if (!players.length) list = '<form id="newp-form" class="card stack" data-form="noop" data-key="newp">' + playerFieldsHtml('newp', {}, 'np', 'barn', '') + '</form>' +
+    (s.type !== 'ind' && S.uid ? '<button class="linkbtn" data-act="inline-more" data-sid="' + esc(sid) + '">+ Ska fler spelare med? Spara den här och lägg till nästa</button>' : '');
+  else list = players.map(([pid, p]) => {
+    const can = elig.indexOf(pid) >= 0, on = sel.indexOf(pid) >= 0;
+    return '<button type="button" class="pick' + (s.type === 'ind' ? ' radio' : '') + '" data-act="sel" data-sid="' + esc(sid) + '" data-pid="' + esc(pid) + '" aria-pressed="' + on + '"' + (can ? '' : ' disabled') + '><span class="ic" aria-hidden="true">' + (on ? '✓' : '') + '</span><span class="grow"><strong>' + esc(p.name) + '</strong>' + (can ? '' : ' <span class="small muted">· redan bokad på passet</span>') + '</span><span class="small muted">' + esc(ageOf(p.birthYear)) + '</span></button>';
+  }).join('') + '<button class="linkbtn" data-act="goto-player" data-ret="boka-' + esc(sid) + '">+ Lägg till spelare</button>';
+  const okToSend = n > 0 && !tooMany && S.ui.terms && !S.busy;
+  return '<div class="wrap stack-l"><a href="#pass-' + esc(sid) + '" class="linkbtn">← Passet</a><h1 class="display h1">' + (grp ? 'Anmäl till pass' : 'Boka pass') + '</h1>' +
+    '<div class="cols"><div class="c-main stack">' +
+      '<div class="card stack-s"><div class="row">' + typeTag(s.type) + '<strong>' + esc(s.focus || T.name) + '</strong></div><div class="muted">' + fDay(st) + ' · ' + fTime(st) + '–' + fTime(st + H) + ' · ' + esc(s.place || 'Plats meddelas') + '</div><div class="small" style="font-weight:600">' + state.label + '</div></div>' +
+      (hasAcct ? '' : guestBlock(false)) +
+      '<fieldset><legend style="font-size:18px">' + (players.length ? 'Vilka ska träna?' : 'Spelaren') + '</legend>' + (hasAcct ? '<p class="small muted" style="margin:-4px 0 10px">Bokas av: ' + esc(fam.account.name) + '</p>' : '') + '<div class="stack-s">' + list + '</div></fieldset>' +
+      wishHtml(sid, s) +
+      (tooMany ? '<p class="box t-warn" role="alert">' + (s.type === 'ind' ? 'Individuell träning gäller en spelare.' : 'Det finns bara ' + capN + ' lediga platser. Välj högst ' + capN + ' spelare.') + '</p>' : '') +
+      (s.type === 'duo' ? '<p class="small muted">Passet blir av med minst 2 bekräftade spelare. Du kan boka en plats själv – andra kan boka resten.</p>' : '') +
+      (grp ? '<p class="box t-info">Abbe granskar anmälan för att sätta ihop jämna grupper. Du betalar när anmälan är godkänd.</p>' : '') +
+    '</div><aside class="c-side card stack">' +
+      '<div class="sum"><div class="kv"><span class="muted">Pris per spelare</span><strong>' + kr(T.price) + '</strong></div><div class="kv"><span class="muted">Antal spelare</span><strong>' + n + '</strong></div><div class="kv kv-total"><strong>Totalt</strong><span class="big">' + kr(total) + '</span></div></div>' +
+      (grp ? '' : '<p class="small muted">Platserna hålls åt dig i 10 minuter medan du betalar, så ingen annan kan ta dem.</p>') +
+      '<label class="check" for="b-terms"><input type="checkbox" id="b-terms"' + (S.ui.terms ? ' checked' : '') + '><span>Jag godkänner <a href="#villkor">bokningsvillkoren</a> och att uppgifterna sparas enligt integritetstexten.</span></label>' +
+      bookButton(sid, okToSend, grp) +
+      (n === 0 && players.length ? '<p class="small muted">Välj minst en spelare.</p>' : '') +
+    '</aside></div></div>';
+}
+
+function wishHtml(sid, s){
+  const key = 'wish-' + sid;
+  const mode = dv(key, 'wm', 'abbe');
+  const gv = dv(key, 'wg', []), g = Array.isArray(gv) ? gv : [gv];
+  const r = (v, l, sub) => '<label class="opt" for="w-' + v + '"><input type="radio" id="w-' + v + '" name="wm" value="' + v + '"' + (mode === v ? ' checked' : '') + '><span><span class="d-block">' + l + '</span><span class="small muted" style="font-weight:400">' + sub + '</span></span></label>';
+  return '<form data-form="noop" data-key="' + key + '" class="stack-s"><fieldset><legend style="font-size:18px">Vad vill ni träna på?</legend><div class="opts col">' +
+    r('abbe', 'Låt Abbe välja', 'Abbe utgår från spelarprofilen och lägger fokus där det behövs mest.') +
+    r('self', 'Vi väljer själva', 'Välj ett eller flera områden.') + '</div></fieldset>' +
+    (mode === 'self' ? '<fieldset><legend class="sr">Välj fokus</legend><div class="opts">' + GOALS.map((gl, i) => '<label class="opt pill" for="w-g' + i + '"><input type="checkbox" id="w-g' + i + '" name="wg" value="' + esc(gl) + '"' + (g.indexOf(gl) >= 0 ? ' checked' : '') + '>' + esc(gl) + '</label>').join('') + '</div></fieldset>' : '') +
+    '<div class="field"><label for="w-note">Något särskilt Abbe ska veta inför passet? <span class="hint">(valfritt)</span></label><input class="input" id="w-note" name="wn" maxlength="300" value="' + esc(dv(key, 'wn', '')) + '"></div>' +
+    (s.type !== 'ind' ? '<p class="small muted">I ' + (s.type === 'grp' ? 'gruppträning' : 'duo/trio') + ' väger Abbe ihop allas önskemål.</p>' : '') + '</form>';
+}
+function wishText(w){
+  if (!w) return '';
+  if (w.mode === 'self') return 'Önskar: ' + ((w.goals || []).join(', ') || '–') + (w.note ? ' – ' + w.note : '');
+  return 'Abbe väljer fokus' + (w.note ? ' – ' + w.note : '');
+}
+
+/* ---------- Betalning (test) ---------- */
+function viewBetala(bid){
+  const g = gate(true); if (g) return g;
+  const b = myB(bid); if (!b) return notice('Bokningen finns inte', '', '<a class="btn btn-ghost" href="#mina-sidor">Till Mina sidor</a>');
+  const s = S.sessions[b.sid], now = Date.now(), es = effStatus(b, now), fam = me();
+  const names = (b.players || []).map(p => (fam.players[p] || {}).name || 'Spelare').join(', ');
+  const st = s ? startOf(s) : 0;
+  const summary = '<div class="card sum"><div class="row">' + typeTag(b.type) + '<strong>' + esc(s ? s.focus || TYPES[b.type].name : '') + '</strong></div><div class="muted">' + (s ? fDay(st) + ' · ' + fTime(st) + ' · ' + esc(s.place || '') : '') + '</div>' +
+    '<div class="kv kv-total" style="align-items:center"><span class="muted">Spelare</span><strong>' + esc(names) + '</strong></div><div class="kv"><span class="muted">' + b.n + ' × ' + kr(b.price) + '</span><strong>' + kr(b.total) + '</strong></div><div class="kv kv-total"><strong>Att betala</strong><span class="big">' + kr(b.total) + '</span></div></div>';
+  if (es === 'confirmed') return '<div class="wrap stack-l" style="max-width:720px"><h1 class="display h1">Bokningen är bekräftad</h1><p class="lead">Betalningen är verifierad. Du hittar bokningen på Mina sidor.</p>' + summary + timeline([{text:'Platser reserverade', state:'done'},{text:'Betalning verifierad', state:'done'},{text:'Bokning bekräftad', state:'done'}]) + '<div class="row"><a class="btn btn-primary" href="#mina-sidor">Till Mina sidor</a><a class="btn btn-ghost" href="#kalender">Boka fler pass</a></div></div>';
+  if (es !== 'reserved' && es !== 'approved') return notice('Bokningen kan inte betalas', 'Status: ' + (BST[es] || [es])[0] + '.', '<a class="btn btn-ghost" href="#mina-sidor">Till Mina sidor</a>');
+  const waiting = b.pay && b.pay.status === 'waiting';
+  const holdTxt = es === 'reserved' ? 'Platserna hålls till kl. ' + fTime(b.holdUntil) + '.' : 'Betala senast ' + fWhen(b.payBy) + '.';
+  return '<div class="wrap stack-l" style="max-width:720px"><a href="#mina-sidor" class="linkbtn">← Mina sidor</a><h1 class="display h1">Betala med Swish</h1>' +
+    '<p class="box t-warn"><strong>Testläge:</strong> betalningen är simulerad. Inga pengar dras.</p>' + summary +
+    '<div class="card">' + timeline([{text:es === 'reserved' ? 'Platser reserverade' : 'Anmälan godkänd', state:'done', sub: holdTxt},{text:'Väntar på godkännande i Swish', state: waiting ? 'now' : 'next'},{text:'Betalning verifierad', state:'next'},{text:'Bokning bekräftad', state:'next'}]) + '</div>' +
+    '<p class="small muted">Bokningen bekräftas först när betalningen är verifierad.</p>' +
+    (waiting ? '<p class="small muted">I den riktiga versionen öppnas Swish-appen här och sidan väntar på svar från Swish.</p><button class="btn btn-test btn-block" data-act="pay-sim" data-bid="' + esc(bid) + '"' + (S.busy ? ' disabled' : '') + '>Test: simulera godkänd betalning</button>'
+             : '<button class="btn btn-primary btn-block" data-act="pay-start" data-bid="' + esc(bid) + '"' + (S.busy ? ' disabled' : '') + '>Öppna Swish (test)</button>') +
+  '</div>';
+}
+
+/* ---------- Mina sidor ---------- */
+function bookingCard(bid, b, now){
+  const s = S.sessions[b.sid], fam = me(), st0 = s ? startOf(s) : 0, es = effStatus(b, now);
+  const bs = BST[es] || [es, 'neutral'], ps = payStatus(b), m = money(b);
+  const names = (b.players || []).map(p => (fam.players[p] || {}).name || 'Spelare').join(', ') || '–';
+  const future = s && now < st0, inTime = s && now <= st0 - CANCEL_LIMIT;
+  const notes = [], acts = [];
+  if (es === 'reserved'){ notes.push('Platserna hålls till kl. ' + fTime(b.holdUntil) + '. Betala innan dess.'); acts.push('<a class="btn btn-primary btn-sm" href="#betala-' + esc(bid) + '">Betala ' + kr(b.total) + '</a>'); }
+  if (es === 'expired' && future){ notes.push('Du hann inte betala inom 10 minuter, så platserna släpptes.'); acts.push('<button class="btn btn-ghost btn-sm" data-act="rebook" data-bid="' + esc(bid) + '">Reservera igen</button>'); }
+  if (es === 'pending_review') notes.push(m.paid > 0 ? 'Abbe granskar flytten till det här passet.' : 'Abbe sätter ihop gruppen. Du betalar när anmälan är godkänd.');
+  if (es === 'approved'){ notes.push('Betala senast ' + fWhen(b.payBy) + ', annars går platsen till någon annan.'); acts.push('<a class="btn btn-primary btn-sm" href="#betala-' + esc(bid) + '">Betala ' + kr(b.total) + '</a>'); }
+  if (es === 'confirmed' && future) notes.push(inTime ? 'Avboka eller flytta senast ' + fWhen(st0 - CANCEL_LIMIT) + ' för full återbetalning.' : 'Mindre än 12 timmar kvar. Avbokning ger ingen återbetalning.');
+  if (es === 'session_cancelled'){ notes.push('Passet är inställt' + (s && s.cancelReason ? ': ' + s.cancelReason : '') + '.'); if (s && s.cancelMsg) notes.push('Meddelande från Abbe: ' + s.cancelMsg); if (m.remaining > 0 && m.refPending === 0) notes.push('Hela beloppet betalas tillbaka.'); acts.push('<a class="btn btn-ghost btn-sm" href="#kalender">Hitta ett annat pass</a>'); }
+  if (b.decisionMsg && ['approved','confirmed','declined'].indexOf(es) >= 0) notes.push('Meddelande från Abbe: ' + b.decisionMsg);
+  if (b.lateCancel && es !== 'cancelled') notes.push('En spelare avbokades för sent och återbetalades inte.');
+  if (future && ACTIVE.indexOf(es) >= 0) acts.push('<a class="linkbtn" href="#avboka-' + esc(bid) + '">' + (es === 'pending_review' ? 'Dra tillbaka anmälan' : 'Avboka') + '</a>');
+  if (future && inTime && ['pending_review','approved','confirmed'].indexOf(es) >= 0 && moveTargets(b, now).length) acts.push('<a class="linkbtn" href="#flytta-' + esc(bid) + '">Flytta till annat pass</a>');
+  if (m.refPending > 0) acts.push('<button class="btn btn-test btn-sm" data-act="ref-verify" data-fu="' + esc(S.uid) + '" data-bid="' + esc(bid) + '">Test: Swish bekräftar återbetalningen</button>');
+  return '<article class="card bcard"><div class="row between" style="align-items:baseline"><h3>' + (s ? TYPES[b.type].short + ' · ' + esc(s.focus || '') : 'Borttaget pass') + '</h3><span class="small muted tnum">' + kr(b.total || 0) + '</span></div>' +
+    '<div class="muted small">' + (s ? fWhen(st0) + ' · ' + esc(s.place || '') : '') + '</div>' +
+    '<div class="small"><span class="muted">Spelare:</span> <strong>' + esc(names) + '</strong></div>' +
+    (b.wish ? '<div class="small"><span class="muted">Fokus:</span> ' + esc(b.wish.mode === 'self' ? ((b.wish.goals || []).join(', ') || 'Eget val') : 'Abbe väljer') + (b.wish.note ? ' – ' + esc(b.wish.note) : '') + '</div>' : '') +
+    '<div class="stack-s"><div class="kv small"><span class="muted">Bokning</span>' + chip(bs[0], bs[1]) + '</div><div class="kv small"><span class="muted">Betalning</span>' + chip(ps[0], ps[1]) + '</div></div>' +
+    notes.map(t => '<p class="small muted">' + esc(t) + '</p>').join('') +
+    (acts.length ? '<div class="acts">' + acts.join('') + '</div>' : '') + '</article>';
+}
+function viewMina(){
+  const g = gate(false); if (g) return g;
+  const fam = me();
+  if (!fam || !fam.account) return '<div class="wrap stack-l" style="max-width:720px"><h1 class="display h1">Mina sidor</h1><div class="card stack"><h2 style="margin:0">Inga bokningar än</h2><p class="muted">Du behöver inget konto. När du bokar ditt första pass fyller du i namn, telefon eller e-post och en kort spelarprofil. Sedan hittar du dina bokningar här.</p><div><a class="btn btn-primary" href="#kalender">Hitta ett pass</a></div></div></div>';
+  const now = Date.now(), tab = S.ui.mtab || 'kommande';
+  const rows = Object.entries(fam.bookings || {}).filter(([, b]) => b).map(([bid, b]) => ({bid, b, st: S.sessions[b.sid] ? startOf(S.sessions[b.sid]) : 0, es: effStatus(b, now)}));
+  const isUp = x => x.st + H > now && ['reserved','expired','pending_review','approved','confirmed','session_cancelled'].indexOf(x.es) >= 0 || money(x.b).refPending > 0;
+  const shown = rows.filter(x => tab === 'kommande' ? isUp(x) : !isUp(x)).sort((a, b) => tab === 'kommande' ? a.st - b.st : b.st - a.st);
+  const players = activePlayers(fam);
+  return '<div class="wrap stack-l"><div class="row between" style="align-items:flex-end"><div><h1 class="display h1">Mina sidor</h1><p class="muted mt-s">Inloggad som ' + esc(fam.account.name) + ' · ' + (fam.account.role === 'vh' ? 'vårdnadshavare' : 'spelare') + ' · <a href="#konto">Ändra mina uppgifter</a></p></div><a class="btn btn-primary" href="#kalender">Boka nytt pass</a></div>' + dataNote() +
+    '<div class="cols"><section class="c-main stack"><div class="tabs" role="group" aria-label="Visa bokningar"><button data-act="mtab" data-t="kommande" aria-pressed="' + (tab === 'kommande') + '">Kommande</button><button data-act="mtab" data-t="tidigare" aria-pressed="' + (tab === 'tidigare') + '">Tidigare</button></div>' +
+      (shown.length ? shown.map(x => bookingCard(x.bid, x.b, now)).join('') : '<div class="empty">' + (tab === 'kommande' ? 'Inga kommande bokningar. <a href="#kalender">Hitta ett pass</a>' : 'Inga tidigare bokningar.') + '</div>') +
+    '</section><aside class="c-side stack"><h2 style="margin:0;font-size:20px">' + (fam.account.role === 'vh' ? 'Mina spelare' : 'Spelarprofiler') + '</h2>' +
+      (players.length ? players.map(([pid, p]) => '<div class="card row between" style="padding:12px 16px"><div><div style="font-weight:700">' + esc(p.name) + (p.birthYear ? ', ' + esc(ageOf(p.birthYear)) : '') + '</div><div class="small muted">' + esc(LEVEL[p.level] || '') + '</div></div><a href="#spelare-' + esc(pid) + '" style="font-weight:600">Ändra</a></div>').join('') : '<div class="empty">Inga spelarprofiler än.</div>') +
+      '<div><a class="btn btn-ghost btn-sm" href="#spelare-ny">+ Lägg till spelare</a></div></aside></div></div>';
+}
+
+/* ---------- Konto ---------- */
+function dv(key, name, fallback){ const d = S.drafts[key]; if (d && Object.prototype.hasOwnProperty.call(d, name)) return d[name]; return fallback; }
+function viewKonto(){
+  const g = gate(false); if (g) return g;
+  const fam = me(), a = (fam && fam.account) || {}, key = 'konto', isNew = !fam || !fam.account;
+  const role = dv(key, 'role', a.role || '');
+  const radio = (v, l) => '<label class="opt" for="k-role-' + v + '"><input type="radio" id="k-role-' + v + '" name="role" value="' + v + '"' + (role === v ? ' checked' : '') + ' required>' + l + '</label>';
+  return '<div class="wrap stack-l"><a href="#mina-sidor" class="linkbtn">← Mina sidor</a><h1 class="display h1">' + (isNew ? 'Skapa konto' : 'Kontouppgifter') + '</h1>' +
+    '<form class="form" data-form="konto" data-key="' + key + '" novalidate>' +
+      '<div class="field"><label for="k-name">Ditt namn</label><input class="input" id="k-name" name="name" autocomplete="name" value="' + esc(dv(key, 'name', a.name || '')) + '" required></div>' +
+      '<div class="grid2"><div class="field"><label for="k-phone">Telefon</label><input class="input" id="k-phone" name="phone" type="tel" autocomplete="tel" value="' + esc(dv(key, 'phone', a.phone || '')) + '" required></div>' +
+      '<div class="field"><label for="k-email">E-post <span class="hint">(telefon eller e-post krävs)</span></label><input class="input" id="k-email" name="email" type="email" autocomplete="email" value="' + esc(dv(key, 'email', a.email || '')) + '"></div></div>' +
+      '<fieldset><legend>Vem bokar du för?</legend><div class="opts col">' + radio('spelare', 'Mig själv – jag är vuxen spelare') + radio('vh', 'Mitt barn – jag är vårdnadshavare') + '</div></fieldset>' +
+      (isNew ? '<label class="check" for="k-consent"><input type="checkbox" id="k-consent" name="consent" value="1"' + (dv(key, 'consent', '') ? ' checked' : '') + '><span>Jag godkänner att uppgifterna sparas enligt <a href="#villkor">integritetstexten</a>. Lägger jag till barn är jag vårdnadshavare för dem.</span></label>' : '') +
+      '<div class="row"><button class="btn btn-primary" type="submit"' + (S.busy ? ' disabled' : '') + '>' + (isNew ? 'Skapa konto' : 'Spara') + '</button><a class="btn btn-ghost" href="#mina-sidor">Avbryt</a></div>' +
+    '</form></div>';
+}
+
+/* ---------- Spelarprofil ---------- */
+function viewSpelare(arg){
+  const g = gate(false); if (g) return g;
+  const fam = me(), hasAcct = !!(fam && fam.account), isNew = arg === 'ny', p = isNew ? {} : ((fam && fam.players) || {})[arg];
+  if (!isNew && (!p || p.removed)) return notice('Spelaren finns inte', '', '<a class="btn btn-ghost" href="#mina-sidor">Till Mina sidor</a>');
+  const key = 'spelare-' + arg;
+  const selfDefault = isNew ? (hasAcct && fam.account.role === 'spelare' && !activePlayers(fam).some(([, x]) => x.self) ? 'jag' : 'barn') : (p.self ? 'jag' : 'barn');
+  const who = dv(key, 'who', selfDefault);
+  const exp = dv(key, 'exp', p.exp || ''), level = dv(key, 'level', p.level || '');
+  const goals = dv(key, 'goals', p.goals || []);
+  const goalsArr = Array.isArray(goals) ? goals : [goals];
+  const nameDefault = isNew && selfDefault === 'jag' ? fam.account.name : (p.name || '');
+  const r = (name, v, l, curV, cls) => '<label class="opt' + (cls || '') + '" for="p-' + name + '-' + v + '"><input type="radio" id="p-' + name + '-' + v + '" name="' + name + '" value="' + v + '"' + (curV === v ? ' checked' : '') + '>' + l + '</label>';
+  const inUse = !isNew && Object.values(fam.bookings || {}).some(b => b && (b.players || []).indexOf(arg) >= 0 && ACTIVE.indexOf(effStatus(b, Date.now())) >= 0);
+  const confirmRm = S.ui.rmPid === arg;
+  return '<div class="wrap stack-l"><a href="#mina-sidor" class="linkbtn">← Mina sidor</a><div><h1 class="display h1">' + (isNew ? 'Ny spelare' : 'Spelarprofil') + '</h1><p class="lead mt-s">Profilen hjälper Abbe att anpassa träningen. Bara Abbe och du ser den.</p></div>' +
+    (hasAcct ? '' : guestBlock(true)) +
+    '<form class="form" data-form="spelare" data-key="' + key + '" data-pid="' + esc(isNew ? '' : arg) + '" novalidate>' +
+      playerFieldsHtml(key, p, 'p', selfDefault, nameDefault) +
+      '<div class="row"><button class="btn btn-primary" type="submit"' + (S.busy ? ' disabled' : '') + '>Spara spelarprofil</button><a class="btn btn-ghost" href="#mina-sidor">Avbryt</a></div>' +
+    '</form>' +
+    (!isNew ? '<div class="card stack-s" style="max-width:620px"><h2 style="margin:0;font-size:18px">Ta bort spelaren</h2>' + (inUse ? '<p class="small muted">Spelaren har aktiva bokningar och kan inte tas bort just nu.</p>' : confirmRm ? '<p class="small">Vill du ta bort ' + esc(p.name) + '? Det går inte att ångra.</p><div class="row"><button class="btn btn-danger btn-sm" data-act="p-rm-do" data-pid="' + esc(arg) + '">Ta bort</button><button class="btn btn-ghost btn-sm" data-act="p-rm-no">Avbryt</button></div>' : '<div><button class="btn btn-danger-ghost btn-sm" data-act="p-rm-ask" data-pid="' + esc(arg) + '">Ta bort spelaren</button></div>') + '</div>' : '') +
+  '</div>';
+}
+
+/* ---------- Avboka ---------- */
+function viewAvboka(bid){
+  const g = gate(true); if (g) return g;
+  const b = myB(bid); if (!b) return notice('Bokningen finns inte', '', '<a class="btn btn-ghost" href="#mina-sidor">Till Mina sidor</a>');
+  const s = S.sessions[b.sid], now = Date.now(), es = effStatus(b, now), fam = me();
+  if (!s || ACTIVE.indexOf(es) < 0 || now >= startOf(s)) return notice('Bokningen kan inte avbokas', 'Status: ' + (BST[es] || [es])[0] + '.', '<a class="btn btn-ghost" href="#mina-sidor">Till Mina sidor</a>');
+  const st = startOf(s), inTime = now <= st - CANCEL_LIMIT, m = money(b), paid = m.paid > 0;
+  const sel = (S.ui.cxBid === bid ? S.ui.cx : (b.players || [])).filter(p => (b.players || []).indexOf(p) >= 0);
+  const refund = paid && inTime ? Math.min(m.remaining, sel.length * b.price) : 0;
+  const pend = es === 'pending_review';
+  const hrs = Math.max(0, Math.round((st - now) / H));
+  const box = !paid ? '<div class="box t-neutral">Bokningen är inte betald, så det finns inget att betala tillbaka.</div>'
+    : inTime ? '<div class="box t-ok"><strong>Mer än 12 timmar kvar.</strong><br>Du får full återbetalning om du avbokar senast ' + fWhen(st - CANCEL_LIMIT) + '.</div>'
+    : '<div class="box t-warn" role="alert"><strong>Mindre än 12 timmar kvar.</strong><br>Passet börjar om ' + hrs + ' timmar. Avbokar du nu får du ingen återbetalning, och det går inte längre att flytta passet.</div>';
+  return '<div class="wrap stack-l" style="max-width:720px"><a href="#mina-sidor" class="linkbtn">← Mina sidor</a><h1 class="display h1">' + (pend ? 'Dra tillbaka anmälan' : 'Avboka') + '</h1>' +
+    '<div class="card stack-s"><div class="row">' + typeTag(b.type) + '<strong>' + esc(s.focus || '') + '</strong></div><div class="muted">' + fWhen(st) + ' · ' + esc(s.place || '') + '</div>' + (paid ? '<div class="small">Betalt: <strong>' + kr(m.paid) + '</strong></div>' : '') + '</div>' + box +
+    (inTime && ['approved','confirmed','pending_review'].indexOf(es) >= 0 && moveTargets(b, now).length ? '<a class="card row between" href="#flytta-' + esc(bid) + '" style="text-decoration:none;font-weight:600"><span>Vill du hellre flytta till ett annat pass?</span><span aria-hidden="true">→</span></a>' : '') +
+    ((b.players || []).length > 1 ? '<fieldset><legend style="font-size:18px">Vilka ska avbokas?</legend><div class="stack-s">' + (b.players || []).map(pid => { const on = sel.indexOf(pid) >= 0; return '<button type="button" class="pick" data-act="cx" data-bid="' + esc(bid) + '" data-pid="' + esc(pid) + '" aria-pressed="' + on + '"><span class="ic" aria-hidden="true">' + (on ? '✓' : '') + '</span><span class="grow"><strong>' + esc((fam.players[pid] || {}).name || 'Spelare') + '</strong></span><span class="small muted">' + kr(b.price) + '</span></button>'; }).join('') + '</div></fieldset>' : '') +
+    '<div class="card sum"><div class="kv"><span class="muted">Avbokas</span><strong>' + sel.length + ' spelare</strong></div><div class="kv kv-total"><strong>Du får tillbaka</strong><span class="big">' + kr(refund) + '</span></div>' + (refund ? '<p class="small muted">Pengarna går tillbaka till samma Swish-nummer som betalade.</p>' : '') + '</div>' +
+    '<div class="row"><button class="btn ' + (paid && !inTime ? 'btn-danger' : 'btn-primary') + '" data-act="cancel-do" data-bid="' + esc(bid) + '"' + (sel.length && !S.busy ? '' : ' disabled') + '>' + (pend ? 'Dra tillbaka anmälan' : refund ? 'Avboka och få tillbaka ' + kr(refund) : paid ? 'Avboka utan återbetalning' : 'Avboka') + '</button><a class="btn btn-ghost" href="#mina-sidor">Behåll bokningen</a></div>' +
+  '</div>';
+}
+
+/* ---------- Flytta ---------- */
+function viewFlytta(bid){
+  const g = gate(true); if (g) return g;
+  const b = myB(bid); if (!b) return notice('Bokningen finns inte', '', '<a class="btn btn-ghost" href="#mina-sidor">Till Mina sidor</a>');
+  const s = S.sessions[b.sid], now = Date.now(), es = effStatus(b, now), fam = me();
+  if (!s || ['pending_review','approved','confirmed'].indexOf(es) < 0 || now > startOf(s) - CANCEL_LIMIT) return notice('Bokningen kan inte flyttas', 'Du kan flytta senast 12 timmar före start.', '<a class="btn btn-ghost" href="#mina-sidor">Till Mina sidor</a>');
+  const st = startOf(s), targets = moveTargets(b, now);
+  const pick = S.ui.mvBid === bid && targets.some(x => x.id === S.ui.mv) ? S.ui.mv : (targets[0] ? targets[0].id : null);
+  const names = (b.players || []).map(p => (fam.players[p] || {}).name || 'Spelare').join(', ');
+  const toS = pick ? S.sessions[pick] : null;
+  return '<div class="wrap stack-l" style="max-width:720px"><a href="#mina-sidor" class="linkbtn">← Mina sidor</a><h1 class="display h1">Flytta pass</h1>' +
+    '<div class="card stack-s"><span class="small muted" style="font-weight:700;letter-spacing:.06em;text-transform:uppercase">Nuvarande pass</span><div class="row">' + typeTag(b.type) + '<strong>' + esc(s.focus || '') + '</strong></div><div class="muted">' + fWhen(st) + ' · ' + esc(s.place || '') + '</div><div class="small">Spelare: <strong>' + esc(names) + '</strong></div></div>' +
+    '<div class="box t-ok"><strong>Du kan flytta fram till ' + fWhen(st - CANCEL_LIMIT) + '.</strong><br>Du flyttar till ett pass av samma träningsform, så det kostar inget extra.' + (b.type === 'grp' ? ' Abbe granskar flytten till den nya gruppen.' : '') + '</div>' +
+    '<fieldset><legend style="font-size:18px">Välj nytt pass</legend><p class="small muted" style="margin:-4px 0 10px">' + TYPES[b.type].short + ' med plats för ' + b.n + ' spelare</p><div class="stack-s">' +
+      (targets.length ? targets.map(x => { const on = x.id === pick, stt = sessionState(x.id, x.s, now); return '<button type="button" class="pick radio" data-act="mv" data-bid="' + esc(bid) + '" data-sid="' + esc(x.id) + '" aria-pressed="' + on + '"><span class="ic" aria-hidden="true">' + (on ? '✓' : '') + '</span><span class="grow"><strong class="d-block">' + fDay(x.st) + ' · ' + fTime(x.st) + '–' + fTime(x.st + H) + '</strong><span class="small muted">' + esc(x.s.focus || '') + ' · ' + esc(x.s.place || '') + (x.s.audience ? ' · ' + esc(x.s.audience) : '') + '</span></span><span class="small" style="font-weight:600">' + (x.s.type === 'ind' ? 'Ledig' : stt.stats.free + ' platser kvar') + '</span></button>'; }).join('') : '<div class="empty">Det finns inga pass av samma träningsform med plats just nu.</div>') +
+    '</div></fieldset>' +
+    (toS ? '<div class="card sum"><div class="kv"><span class="muted">Från</span><strong>' + fWhen(st) + '</strong></div><div class="kv"><span class="muted">Till</span><strong>' + fWhen(startOf(toS)) + '</strong></div><div class="kv kv-total"><span class="muted">Att betala</span><strong>0 kr</strong></div></div>' : '') +
+    '<div class="row"><button class="btn btn-primary" data-act="move-do" data-bid="' + esc(bid) + '"' + (toS && !S.busy ? '' : ' disabled') + '>' + (toS ? 'Flytta till ' + fDay(startOf(toS)).toLowerCase() : 'Flytta') + '</button><a class="btn btn-ghost" href="#avboka-' + esc(bid) + '">Avboka i stället</a></div>' +
+  '</div>';
+}
+
+/* ---------- Villkor ---------- */
+function viewVillkor(){
+  const sec = (h, ps) => '<section class="stack-s"><h2 style="margin:0;font-size:20px">' + h + '</h2>' + ps.map(p => '<p>' + p + '</p>').join('') + '</section>';
+  return '<div class="wrap stack-l" style="max-width:760px"><div><h1 class="display h1">Bokningsvillkor</h1><p class="box t-warn mt-m">Utkast – ska granskas innan riktiga kunder bokar.</p></div>' +
+    sec('Bokning och priser', ['Alla pass är 60 minuter. Pris per spelare: individuell träning 599 kr, duo/trio 349 kr och gruppträning 200 kr.', 'En bokning är bekräftad först när betalningen är verifierad. Gruppanmälningar granskas av Abbe, som sätter ihop grupper med spelare på ungefär samma nivå och i liknande ålder. Du betalar först när anmälan är godkänd.']) +
+    sec('Betalning', ['Betalning sker med Swish via webbplatsen. Reserverade platser hålls i 10 minuter medan du betalar. En godkänd gruppanmälan betalas senast 24 timmar före start.']) +
+    sec('Avbokning och flytt', ['Du kan avboka eller flytta till ett annat pass av samma träningsform senast 12 timmar före start. Avbokar du i tid får du full återbetalning.', 'Avbokning senare än 12 timmar före start återbetalas inte, och passet kan då inte flyttas.']) +
+    sec('Inställda pass', ['Gruppträning kräver minst 6 bekräftade spelare och duo/trio minst 2, räknat 24 timmar före start. Är det färre ställs passet in. Ett pass som har klarat kontrollen blir av även om någon avbokar senare.', 'Abbe kan också ställa in ett pass, till exempel vid sjukdom eller dåligt väder. Ställs ett pass in betalas hela beloppet tillbaka.']) +
+    sec('Ansvar och försäkring', ['[Att fylla i: vad som gäller för försäkring och ansvar under träningen.]']) +
+    '<h1 class="display h2 mt-l">Integritet</h1>' +
+    sec('Vilka uppgifter som sparas', ['Kontaktuppgifter (namn och telefon eller e-post), spelarprofiler (förnamn, födelseår, klubb, erfarenhet, nivå, vad spelaren vill utveckla och det du själv skriver), bokningar, betalningsstatus och närvaro.']) +
+    sec('Varför', ['För att hantera bokningar och betalningar, anpassa träningen efter spelaren och sätta ihop jämna grupper.']) +
+    sec('Vem som ser uppgifterna', ['Du ser bara dina egna spelarprofiler och bokningar. Abbe ser alla som administratör. Andra besökare ser bara hur många platser som är bokade på varje pass.']) +
+    sec('Hur länge', ['[Att bestämma: till exempel 24 månader efter senaste bokningen.]']) +
+    sec('Dina rättigheter', ['Du kan be om att få se, rätta eller ta bort dina uppgifter. Kontakta [e-post].']) +
+  '</div>';
+}
+
+/* ---------- Adminpanel ---------- */
+function pendingList(){ const now = Date.now(); return allBookings().filter(x => x.b && effStatus(x.b, now) === 'pending_review'); }
+function adminShell(r){
+  const pend = pendingList().length;
+  const n = r.name;
+  const cur = arr => arr.indexOf(n) >= 0 ? ' aria-current="page"' : '';
+  const side = '<nav class="side" aria-label="Adminmeny"><span class="lbl">Admin</span><a href="#admin"' + cur(['admin']) + '><span>Översikt</span>' + (pend ? '<span class="badge">' + pend + '</span>' : '') + '</a><a href="#admin-pass"' + cur(['admin-pass','admin-nytt','admin-andra']) + '>Pass</a><a href="#admin-betalningar"' + cur(['admin-betalningar']) + '>Betalningar</a></nav>';
+  let main;
+  if (!isLoaded()) main = loadingView();
+  else if (n === 'admin-pass' && r.arg) main = adminSession(r.arg);
+  else if (n === 'admin-pass') main = adminPassList();
+  else if (n === 'admin-nytt') main = adminPassForm(null);
+  else if (n === 'admin-andra') main = adminPassForm(r.arg);
+  else if (n === 'admin-betalningar') main = adminPayments();
+  else main = adminOverview();
+  return '<div class="wrap"><div class="admin">' + side + '<div class="amain">' + dataNote() + main + '</div></div></div>';
+}
+function statusOf(sid, s, now){
+  const state = sessionState(sid, s, now), mn = minNote(s, state.stats, now);
+  if (state.code === 'cancelled') return chip('Inställt', 'bad');
+  if (state.code === 'past') return chip('Har varit', 'neutral');
+  if (state.stats.pending > 0) return chip(state.stats.pending + ' att granska', 'warn');
+  if (mn && mn.tone === 'bad') return chip('Under minimum', 'bad');
+  if (s.checked === 'ok') return chip('Blir av', 'ok');
+  if (state.code === 'full') return chip('Fullbokat', 'ok');
+  return chip('Öppet', 'neutral');
+}
+function sessionTable(list, now){
+  if (!list.length) return '<div class="empty">Inga pass att visa.</div>';
+  return '<div class="tablebox"><table><thead><tr><th>Datum och tid</th><th>Träningsform</th><th>Plats</th><th class="num">Bokade</th><th class="num">Bekräftade</th><th>Status</th><th><span class="sr">Öppna</span></th></tr></thead><tbody>' +
+    list.map(x => { const stt = sessionStats(x.id, now); return '<tr><td style="white-space:nowrap;font-weight:600">' + fWhen(x.st) + '</td><td>' + TYPES[x.s.type].short + (x.s.audience ? ' <span class="small muted">' + esc(x.s.audience) + '</span>' : '') + '</td><td>' + esc(x.s.place || '–') + '</td><td class="num">' + stt.used + ' / ' + stt.max + '</td><td class="num">' + stt.confirmed + (x.s.type !== 'ind' ? ' <span class="small muted">av minst ' + TYPES[x.s.type].min + '</span>' : '') + '</td><td>' + statusOf(x.id, x.s, now) + '</td><td><a href="#admin-pass-' + esc(x.id) + '" style="font-weight:600">Öppna</a></td></tr>'; }).join('') +
+  '</tbody></table></div>';
+}
+function adminOverview(){
+  const now = Date.now(), todo = [];
+  const byS = {};
+  pendingList().forEach(x => { byS[x.b.sid] = (byS[x.b.sid] || 0) + 1; });
+  Object.entries(byS).forEach(([sid, c]) => { const s = S.sessions[sid]; if (s) todo.push({dot:'warn', t: c + (c === 1 ? ' gruppanmälan väntar' : ' gruppanmälningar väntar') + ' på granskning', d: TYPES[s.type].short + ' ' + fWhen(startOf(s)) + (s.audience ? ' · ' + s.audience : ''), a:'Granska', h:'#admin-pass-' + sid}); });
+  sortedSessions().forEach(x => {
+    if (x.s.status !== 'open' || x.s.type === 'ind' || x.s.checked || x.st < now || x.st > now + 72 * H) return;
+    const stt = sessionStats(x.id, now), min = TYPES[x.s.type].min;
+    if (stt.confirmed < min) todo.push({dot:'bad', t: TYPES[x.s.type].short + ' ' + fWhen(x.st) + ' har ' + stt.confirmed + ' av minst ' + min + ' bekräftade', d:'Ställs in automatiskt ' + fWhen(x.st - CHECK_LIMIT) + ' om färre än ' + min + ' är bekräftade. Alla som betalat får då full återbetalning.', a:'Visa pass', h:'#admin-pass-' + x.id});
+  });
+  let refN = 0, refSum = 0;
+  allBookings().forEach(x => Object.values(x.b.refunds || {}).forEach(r => { if (r && r.status !== 'verified'){ refN++; refSum += Number(r.amount) || 0; } }));
+  if (refN) todo.push({dot:'info', t: refN + (refN === 1 ? ' återbetalning' : ' återbetalningar') + ' väntar på verifiering', d:'Totalt ' + kr(refSum), a:'Visa', h:'#admin-betalningar'});
+  const upcoming = sortedSessions().filter(x => x.st + H > now && x.st < now + 14 * 24 * H);
+  return '<div class="row between"><h1 class="display h2">Översikt</h1><a class="btn btn-primary" href="#admin-nytt">+ Skapa pass</a></div>' +
+    '<section class="stack-s"><h2 style="margin:0;font-size:20px">Att göra</h2>' + (todo.length ? todo.map(t => '<div class="card todo"><div class="todo-t"><span class="dot dot-' + t.dot + '" aria-hidden="true"></span><div><div style="font-weight:600">' + esc(t.t) + '</div><div class="muted small">' + esc(t.d) + '</div></div></div><a class="btn btn-ghost btn-sm" href="' + t.h + '">' + t.a + '</a></div>').join('') : '<div class="empty">Inget att göra just nu.</div>') + '</section>' +
+    '<section class="stack-s"><h2 style="margin:0;font-size:20px">Pass de närmaste två veckorna</h2>' + sessionTable(upcoming, now) + '</section>' +
+    '<p class="small muted">Kontrollen 24 timmar före start sker automatiskt.</p>';
+}
+function adminPassList(){
+  const now = Date.now(), tab = S.ui.aptab || 'kommande';
+  const all = sortedSessions();
+  const list = tab === 'kommande' ? all.filter(x => x.st + H > now) : all.filter(x => x.st + H <= now).reverse();
+  return '<div class="row between"><h1 class="display h2">Pass</h1><a class="btn btn-primary" href="#admin-nytt">+ Skapa pass</a></div>' +
+    '<div class="tabs" role="group" aria-label="Visa pass"><button data-act="aptab" data-t="kommande" aria-pressed="' + (tab === 'kommande') + '">Kommande</button><button data-act="aptab" data-t="tidigare" aria-pressed="' + (tab === 'tidigare') + '">Tidigare</button></div>' +
+    sessionTable(list, now);
+}
+function adminPassForm(sid){
+  const s = sid ? S.sessions[sid] : null;
+  if (sid && !s) return notice('Passet finns inte', '', '<a class="btn btn-ghost" href="#admin-pass">Till passen</a>');
+  const key = 'pass-' + (sid || 'ny');
+  const tomorrow = new Date(Date.now() + 24 * H); const td = tomorrow.getFullYear() + '-' + String(tomorrow.getMonth() + 1).padStart(2,'0') + '-' + String(tomorrow.getDate()).padStart(2,'0');
+  const type = dv(key, 'type', s ? s.type : 'ind');
+  const hasBookings = sid && allBookings().some(x => x.b && x.b.sid === sid);
+  const T = TYPES[type] || TYPES.ind;
+  const minMax = type === 'grp' ? 6 : type === 'duo' ? 2 : 1;
+  return '<a href="' + (sid ? '#admin-pass-' + esc(sid) : '#admin-pass') + '" class="linkbtn">← Tillbaka</a><h1 class="display h2">' + (sid ? 'Ändra pass' : 'Skapa pass') + '</h1>' +
+    '<form class="form" data-form="pass" data-key="' + key + '" data-sid="' + esc(sid || '') + '" novalidate>' +
+      '<div class="field"><label for="a-type">Träningsform</label><select class="input" id="a-type" name="type"' + (hasBookings ? ' disabled' : '') + '>' + Object.entries(TYPES).map(([k, t]) => '<option value="' + k + '"' + (type === k ? ' selected' : '') + '>' + t.name + ' (' + t.players + ', ' + kr(t.price) + ' per spelare)</option>').join('') + '</select>' + (hasBookings ? '<span class="small muted">Träningsformen kan inte ändras när passet har bokningar.</span>' : '') + '</div>' +
+      '<div class="grid2"><div class="field"><label for="a-date">Datum</label><input class="input" type="date" id="a-date" name="date" value="' + esc(dv(key, 'date', s ? s.date : td)) + '" required></div>' +
+      '<div class="field"><label for="a-time">Starttid</label><input class="input" type="time" id="a-time" name="time" step="300" value="' + esc(dv(key, 'time', s ? s.time : '17:00')) + '" required></div>' +
+      '<div class="field"><label for="a-max">Max antal spelare</label><input class="input" type="number" id="a-max" name="max" min="' + minMax + '" max="' + T.max + '" value="' + esc(dv(key, 'max', s ? s.max : T.max)) + '" required></div></div>' +
+      '<div class="field"><label for="a-place">Plats</label><input class="input" id="a-place" name="place" placeholder="T.ex. planens namn och adress" value="' + esc(dv(key, 'place', s ? s.place : '')) + '" required></div>' +
+      '<div class="grid2"><div class="field"><label for="a-focus">Träningsfokus</label><input class="input" id="a-focus" name="focus" placeholder="T.ex. Avslut" value="' + esc(dv(key, 'focus', s ? s.focus : 'Utifrån spelarens behov')) + '" required></div>' +
+      '<div class="field"><label for="a-aud">Målgrupp</label><input class="input" id="a-aud" name="audience" placeholder="T.ex. 10–13 år" value="' + esc(dv(key, 'audience', s ? s.audience : '')) + '"></div></div>' +
+      '<div class="field"><label for="a-eq">Utrustning</label><textarea class="input" id="a-eq" name="equipment">' + esc(dv(key, 'equipment', s ? s.equipment : DEFAULT_EQ)) + '</textarea></div>' +
+      '<div class="row"><button class="btn btn-primary" type="submit"' + (S.busy ? ' disabled' : '') + '>' + (sid ? 'Spara ändringar' : 'Skapa pass') + '</button><a class="btn btn-ghost" href="' + (sid ? '#admin-pass-' + esc(sid) : '#admin-pass') + '">Avbryt</a></div>' +
+    '</form>';
+}
+function adminSession(sid){
+  const s = S.sessions[sid];
+  if (!s || !TYPES[s.type]) return notice('Passet finns inte', '', '<a class="btn btn-ghost" href="#admin-pass">Till passen</a>');
+  const now = Date.now(), st = startOf(s), T = TYPES[s.type], stats = sessionStats(sid, now);
+  const books = allBookings().filter(x => x.b && x.b.sid === sid).map(x => Object.assign({}, x, {es: effStatus(x.b, now)}));
+  const pend = books.filter(x => x.es === 'pending_review');
+  const act = books.filter(x => ['reserved','approved','confirmed'].indexOf(x.es) >= 0);
+  const other = books.filter(x => ['reserved','approved','confirmed','pending_review'].indexOf(x.es) < 0);
+  const pl = (x, pid) => ((x.fam.players || {})[pid]) || {};
+  const prof = p => '<dl class="prof"><dt>Ålder</dt><dd>' + esc(ageOf(p.birthYear) || '–') + '</dd><dt>Nivå</dt><dd>' + esc(LEVEL[p.level] || '–') + '</dd><dt>Erfarenhet</dt><dd>' + esc(EXP[p.exp] || '–') + '</dd><dt>Vill utveckla</dt><dd>' + esc((p.goals || []).join(', ') || '–') + '</dd>' + (p.club ? '<dt>Klubb</dt><dd>' + esc(p.club) + '</dd>' : '') + (p.notes ? '<dt>Övrigt</dt><dd>' + esc(p.notes) + '</dd>' : '') + '</dl>';
+  // gruppens sammansättning
+  const groupPlayers = [];
+  act.forEach(x => (x.b.players || []).forEach(pid => groupPlayers.push(pl(x, pid))));
+  const ages = groupPlayers.map(p => p.birthYear ? new Date().getFullYear() - Number(p.birthYear) : null).filter(a => a != null);
+  const lvl = {}; groupPlayers.forEach(p => { if (p.level) lvl[p.level] = (lvl[p.level] || 0) + 1; });
+  const comp = groupPlayers.length ? (ages.length ? Math.min.apply(null, ages) + '–' + Math.max.apply(null, ages) + ' år' : '') + (Object.keys(lvl).length ? ' · ' + Object.entries(lvl).map(([k, c]) => c + ' ' + (LEVEL[k] || k).toLowerCase()).join(', ') : '') : 'Inga godkända spelare än';
+  // inställning
+  const refundRows = act.filter(x => money(x.b).remaining > 0);
+  const refundSum = refundRows.reduce((a, x) => a + money(x.b).remaining, 0);
+  const cOpen = S.ui.cancelSid === sid, ckey = 'cancel-' + sid;
+  const reason = dv(ckey, 'reason', REASONS[0]);
+  const cancelPanel = !cOpen ? '' : '<form class="card stack" data-form="noop" data-key="' + ckey + '" id="cancel-form"><h2 style="margin:0;font-size:20px">Ställ in passet</h2>' +
+    '<fieldset><legend>Anledning</legend><div class="opts">' + REASONS.map((rr, i) => '<label class="opt pill" for="c-r' + i + '"><input type="radio" id="c-r' + i + '" name="reason" value="' + esc(rr) + '"' + (reason === rr ? ' checked' : '') + '>' + esc(rr) + '</label>').join('') + '</div></fieldset>' +
+    '<div class="field"><label for="c-msg">Meddelande till deltagarna <span class="hint">(valfritt)</span></label><textarea class="input" id="c-msg" name="msg" placeholder="T.ex. Tyvärr blev vi för få den här gången.">' + esc(dv(ckey, 'msg', '')) + '</textarea></div>' +
+    '<div class="stack-s"><strong>Det här händer</strong>' + (books.filter(x => ACTIVE.indexOf(x.es) >= 0).length ? books.filter(x => ACTIVE.indexOf(x.es) >= 0).map(x => { const rem = money(x.b).remaining; return '<div class="kv small"><span>' + esc((x.fam.account || {}).name || 'Bokare') + ' · ' + esc((x.b.players || []).map(p => pl(x, p).name || 'Spelare').join(', ')) + '</span><strong>' + (rem > 0 ? kr(rem) + ' återbetalas' : 'Inget att återbetala') + '</strong></div>'; }).join('') : '<p class="small muted">Inga aktiva bokningar.</p>') +
+    '<div class="kv kv-total"><strong>Återbetalas totalt</strong><span class="big">' + kr(refundSum) + '</span></div><p class="small muted">Alla som betalat får hela beloppet tillbaka. Deltagarna ser att passet är inställt på Mina sidor.</p></div>' +
+    '<div class="row"><button type="button" class="btn btn-danger" data-act="cancel-session" data-sid="' + esc(sid) + '"' + (S.busy ? ' disabled' : '') + '>Ställ in passet' + (refundSum ? ' och återbetala ' + kr(refundSum) : '') + '</button><button type="button" class="btn btn-ghost" data-act="cancel-close">Avbryt</button></div></form>';
+  const canDelete = !books.length;
+  const delAsk = S.ui.delSid === sid;
+  const actions = s.status === 'cancelled' ? '' : '<div class="row"><a class="btn btn-ghost btn-sm" href="#admin-andra-' + esc(sid) + '">Ändra</a>' + (now < st ? '<button class="btn btn-danger-ghost btn-sm" data-act="cancel-open" data-sid="' + esc(sid) + '">Ställ in</button>' : '') + (canDelete ? (delAsk ? '<span class="small">Ta bort passet helt?</span><button class="btn btn-danger btn-sm" data-act="del-do" data-sid="' + esc(sid) + '">Ja, ta bort</button><button class="btn btn-ghost btn-sm" data-act="del-no">Nej</button>' : '<button class="linkbtn" data-act="del-ask" data-sid="' + esc(sid) + '">Ta bort</button>') : '') + '</div>';
+  const review = s.type !== 'grp' ? '' : '<section class="stack-s"><h2 style="margin:0;font-size:20px">Anmälningar att granska</h2><p class="small muted">Gruppen nu: ' + esc(comp) + '</p>' +
+    (pend.length ? '<div class="rev">' + pend.map(x => '<article class="card stack-s"><div class="row between" style="align-items:baseline"><h3>' + esc((x.b.players || []).map(p => pl(x, p).name || 'Spelare').join(', ')) + '</h3><span class="small muted">Bokad av ' + esc((x.fam.account || {}).name || '–') + '</span></div>' +
+      (x.b.players || []).map(pid => ((x.b.players || []).length > 1 ? '<strong class="small">' + esc(pl(x, pid).name || 'Spelare') + '</strong>' : '') + prof(pl(x, pid))).join('') +
+      (x.b.wish ? '<p class="small"><strong>Fokus för passet:</strong> ' + esc(wishText(x.b.wish)) + '</p>' : '') +
+      (money(x.b).paid > 0 ? '<p class="small muted">Redan betald – flyttad från ett annat pass.</p>' : '') +
+      '<div class="field"><label for="msg-' + esc(x.bid) + '" class="small">Meddelande <span class="hint">(valfritt)</span></label><input class="input" id="msg-' + esc(x.bid) + '" placeholder="T.ex. Föreslår passet på tisdag i stället"></div>' +
+      '<div class="row"><button class="btn btn-primary btn-sm" data-act="approve" data-fu="' + esc(x.fu) + '" data-bid="' + esc(x.bid) + '"' + (S.busy ? ' disabled' : '') + '>Godkänn</button><button class="btn btn-ghost btn-sm" data-act="decline" data-fu="' + esc(x.fu) + '" data-bid="' + esc(x.bid) + '"' + (S.busy ? ' disabled' : '') + '>Avslå</button></div></article>').join('') + '</div>' : '<div class="empty">Inga anmälningar väntar.</div>') + '</section>';
+  const rowsP = [];
+  act.forEach(x => (x.b.players || []).forEach(pid => rowsP.push({x, pid, p: pl(x, pid)})));
+  const presentN = rowsP.filter(r0 => r0.x.b.attended && r0.x.b.attended[r0.pid]).length;
+  const partTable = rowsP.length ? '<div class="tablebox"><table><thead><tr><th>Spelare</th><th>Ålder</th><th>Nivå</th><th>Bokad av</th><th>Bokning</th><th>Betalning</th><th>Närvaro</th></tr></thead><tbody>' +
+    rowsP.map(r0 => { const bs = BST[r0.x.es] || [r0.x.es, 'neutral'], ps = payStatus(r0.x.b), on = !!(r0.x.b.attended && r0.x.b.attended[r0.pid]); return '<tr><td style="font-weight:600">' + esc(r0.p.name || 'Spelare') + (r0.p.goals && r0.p.goals.length ? '<div class="small muted" style="font-weight:400">Vill utveckla: ' + esc(r0.p.goals.join(', ')) + '</div>' : '') + (r0.x.b.wish ? '<div class="small" style="font-weight:400">' + esc(wishText(r0.x.b.wish)) + '</div>' : '') + '</td><td>' + esc(ageOf(r0.p.birthYear) || '–') + '</td><td>' + esc(LEVEL[r0.p.level] || '–') + '</td><td>' + esc((r0.x.fam.account || {}).name || '–') + '<div class="small muted">' + esc([(r0.x.fam.account || {}).phone, (r0.x.fam.account || {}).email].filter(Boolean).join(' · ')) + '</div></td><td>' + chip(bs[0], bs[1]) + '</td><td>' + chip(ps[0], ps[1]) + '</td><td><button class="att" data-act="att" data-fu="' + esc(r0.x.fu) + '" data-bid="' + esc(r0.x.bid) + '" data-pid="' + esc(r0.pid) + '" aria-pressed="' + on + '" aria-label="Närvaro för ' + esc(r0.p.name || 'spelare') + '">' + (on ? '✓ Närvarande' : 'Markera närvaro') + '</button></td></tr>'; }).join('') + '</tbody></table></div>' : '<div class="empty">Inga deltagare än.</div>';
+  return '<a href="#admin-pass" class="linkbtn">← Alla pass</a>' +
+    '<div class="stack-s"><div class="row">' + typeTag(s.type) + statusOf(sid, s, now) + (s.test ? chip('Testpass','neutral') : '') + '</div><h1 class="display h2">' + esc(T.short + ' ' + fWhen(st)) + '</h1><p class="muted">' + esc(s.focus || '') + (s.audience ? ' · ' + esc(s.audience) : '') + ' · ' + esc(s.place || '') + ' · ' + kr(T.price) + ' per spelare</p></div>' +
+    (s.status === 'cancelled' ? '<div class="box t-bad"><strong>Passet är inställt.</strong> ' + esc(s.cancelReason || '') + (s.cancelMsg ? '<br>Meddelande: ' + esc(s.cancelMsg) : '') + '</div>' : '') +
+    '<div class="tiles"><div class="card tile"><div class="k">Bokade platser</div><div class="v">' + stats.used + ' av ' + stats.max + '</div></div><div class="card tile"><div class="k">Bekräftade (betalda)</div><div class="v">' + stats.confirmed + (s.type !== 'ind' ? ' · minst ' + T.min : '') + '</div></div>' + (s.type === 'grp' ? '<div class="card tile"><div class="k">Väntar på granskning</div><div class="v">' + stats.pending + '</div></div>' : '') + '<div class="card tile"><div class="k">Kontroll 24 h före</div><div class="v" style="font-size:22px">' + (s.checked === 'ok' ? 'Klar – blir av' : s.status === 'cancelled' ? '–' : fWhen(st - CHECK_LIMIT)) + '</div></div></div>' +
+    actions + cancelPanel + review +
+    '<section class="stack-s"><div class="row between"><h2 style="margin:0;font-size:20px">Deltagare och närvaro</h2><span class="muted small">Närvarande: ' + presentN + ' av ' + rowsP.length + '</span></div>' + partTable + '</section>' +
+    (other.length ? '<section class="stack-s"><h2 style="margin:0;font-size:18px">Avbokade, avslagna och utgångna</h2><div class="tablebox"><table><tbody>' + other.map(x => { const bs = BST[x.es] || [x.es, 'neutral'], ps = payStatus(x.b); return '<tr><td>' + esc((x.b.players || []).map(p => pl(x, p).name || 'Spelare').join(', ') || '–') + '</td><td>' + esc((x.fam.account || {}).name || '–') + '</td><td>' + chip(bs[0], bs[1]) + '</td><td>' + chip(ps[0], ps[1]) + '</td></tr>'; }).join('') + '</tbody></table></div></section>' : '');
+}
+function adminPayments(){
+  const now = Date.now(), rows = [];
+  let inSum = 0, outSum = 0, waitSum = 0;
+  allBookings().forEach(x => {
+    const s = S.sessions[x.b.sid], who = ((x.fam.account || {}).name || 'Bokare') + ' · ' + (s ? TYPES[x.b.type].short + ' ' + fDay(startOf(s)) : 'borttaget pass');
+    const p = x.b.pay || {};
+    if (p.status === 'verified'){ inSum += Number(p.amount) || 0; rows.push({at: p.at || 0, who, kind:'Betalning', amt: p.amount, st:['Verifierad','ok']}); }
+    if (p.status === 'waiting'){ waitSum += Number(p.amount) || 0; rows.push({at: p.at || 0, who, kind:'Betalning', amt: p.amount, st:['Väntar på Swish','info'], btn:'<button class="btn btn-test btn-sm" data-act="pay-verify" data-fu="' + esc(x.fu) + '" data-bid="' + esc(x.bid) + '">Test: verifiera</button>'}); }
+    Object.values(x.b.refunds || {}).forEach(r => { if (!r) return; if (r.status === 'verified') outSum += Number(r.amount) || 0; rows.push({at: r.at || 0, who, kind:'Återbetalning – ' + (r.reason || ''), amt: r.amount, st: r.status === 'verified' ? ['Återbetald','ok'] : ['Väntar på verifiering','info'], btn: r.status === 'verified' ? '' : '<button class="btn btn-test btn-sm" data-act="ref-verify" data-fu="' + esc(x.fu) + '" data-bid="' + esc(x.bid) + '">Test: verifiera</button>'}); });
+    if (x.b.lateCancel) rows.push({at: x.b.endedAt || x.b.createdAt || 0, who, kind:'Sen avbokning', amt: 0, st:['Ingen återbetalning','neutral']});
+  });
+  rows.sort((a, b) => b.at - a.at);
+  return '<h1 class="display h2">Betalningar</h1><p class="box t-warn">Testläge: betalningar och återbetalningar är simulerade. En betalning eller återbetalning räknas som klar först när den är verifierad.</p>' +
+    '<div class="tiles"><div class="card tile"><div class="k">Inbetalt (verifierat)</div><div class="v">' + kr(inSum) + '</div></div><div class="card tile"><div class="k">Återbetalt</div><div class="v">' + kr(outSum) + '</div></div><div class="card tile"><div class="k">Väntar på Swish</div><div class="v">' + kr(waitSum) + '</div></div></div>' +
+    (rows.length ? '<div class="tablebox"><table><thead><tr><th>Datum</th><th>Bokare och pass</th><th>Typ</th><th class="num">Belopp</th><th>Status</th><th><span class="sr">Åtgärd</span></th></tr></thead><tbody>' + rows.map(r => '<tr><td style="white-space:nowrap">' + (r.at ? fDay(r.at) + ' ' + fTime(r.at) : '–') + '</td><td>' + esc(r.who) + '</td><td>' + esc(r.kind) + '</td><td class="num" style="font-weight:600;white-space:nowrap">' + kr(r.amt) + '</td><td>' + chip(r.st[0], r.st[1]) + '</td><td>' + (r.btn || '') + '</td></tr>').join('') + '</tbody></table></div>' : '<div class="empty">Inga betalningar än.</div>');
+}
+
+/* ---------- Formulär ---------- */
+const FORMS = {
+  async konto(f){
+    const fd = new FormData(f);
+    const name = String(fd.get('name') || '').trim(), phone = String(fd.get('phone') || '').trim(), email = String(fd.get('email') || '').trim(), role = String(fd.get('role') || '');
+    const isNew = !me() || !me().account;
+    if (!name) throw userErr('Skriv ditt namn.');
+    if (!phone && !email) throw userErr('Fyll i telefon eller e-post så att Abbe kan nå dig.');
+    if (email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) throw userErr('Kontrollera e-postadressen.');
+    if (role !== 'spelare' && role !== 'vh') throw userErr('Välj vem du bokar för.');
+    if (isNew && !fd.get('consent')) throw userErr('Godkänn integritetstexten för att spara uppgifterna.');
+    await B.saveAccount({name, phone, email, role});
+    delete S.drafts.konto;
+    const ret = S.ui.returnTo; S.ui.returnTo = null;
+    if (isNew){ S.ui.returnAfterPlayer = ret; flashNext('Uppgifterna är sparade. Lägg nu till en spelarprofil.'); go('spelare-ny'); }
+    else { flashNext('Uppgifterna är sparade.'); go(ret || 'mina-sidor'); }
+  },
+  async spelare(f){
+    const fd = new FormData(f), pid = f.dataset.pid;
+    const p = readPlayer(fd);
+    if (!me() || !me().account){
+      const guest = readGuest(), gc = document.getElementById('g-consent');
+      if (!gc || !gc.checked) throw userErr('Godkänn att uppgifterna sparas enligt integritetstexten.');
+      await B.saveAccount(Object.assign(guest, {role: p.self ? 'spelare' : 'vh'}));
+      delete S.drafts.guest;
+    }
+    await B.savePlayer(pid || null, p);
+    delete S.drafts[f.dataset.key];
+    const ret = S.ui.returnAfterPlayer || S.ui.returnTo; S.ui.returnAfterPlayer = null; S.ui.returnTo = null;
+    flashNext('Spelarprofilen är sparad.');
+    go(ret || 'mina-sidor');
+  },
+  async pass(f){
+    const fd = new FormData(f), sid = f.dataset.sid || '', old = sid ? S.sessions[sid] : null;
+    const type = String(fd.get('type') || (old && old.type) || '');
+    if (!TYPES[type]) throw userErr('Välj träningsform.');
+    const date = String(fd.get('date') || ''), time = String(fd.get('time') || '');
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw userErr('Välj datum.');
+    if (!/^\d{2}:\d{2}$/.test(time)) throw userErr('Välj starttid.');
+    const lo = type === 'grp' ? 6 : type === 'duo' ? 2 : 1, hi = TYPES[type].max;
+    const max = Math.round(Number(fd.get('max')));
+    if (!(max >= lo && max <= hi)) throw userErr('Max antal spelare ska vara mellan ' + lo + ' och ' + hi + ' för ' + TYPES[type].name.toLowerCase() + '.');
+    const place = String(fd.get('place') || '').trim(), focus = String(fd.get('focus') || '').trim();
+    if (!place) throw userErr('Skriv var passet är.');
+    if (!focus) throw userErr('Skriv passets träningsfokus.');
+    if (sid){ const used = sessionStats(sid).used; if (max < used) throw userErr('Det finns redan ' + used + ' bokade platser. Max kan inte vara lägre.'); }
+    await B.upsertSession(sid || null, {type, date, time, max, place, focus, audience: String(fd.get('audience') || '').trim(), equipment: String(fd.get('equipment') || '').trim() || DEFAULT_EQ});
+    delete S.drafts[f.dataset.key];
+    flashNext(sid ? 'Passet är uppdaterat.' : 'Passet är skapat.');
+    go(sid ? 'admin-pass-' + sid : 'admin-pass');
+  }
+};
+
+/* ---------- Klick ---------- */
+async function run(fn){
+  if (S.busy) return;
+  S.busy = true; render();
+  try { await fn(); }
+  catch (e){ console.warn(e); flash(errText(e), 'bad'); }
+  finally { S.busy = false; render(); }
+}
+const A = {
+  scroll(d){ const el = document.getElementById(d.to); if (el) el.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}); },
+  filter(d){ S.filter = d.f; render(); },
+  'flash-x'(){ S.flash = null; render(); },
+  mtab(d){ S.ui.mtab = d.t; render(); },
+  aptab(d){ S.ui.aptab = d.t; render(); },
+  'goto-konto'(d){ S.ui.returnTo = d.ret || null; go('konto'); },
+  'goto-player'(d){ S.ui.returnTo = d.ret || null; go('spelare-ny'); },
+  sel(d){
+    const sid = d.sid, s = S.sessions[sid]; if (!s) return;
+    const elig = eligibleFor(sid); let cur = effectiveSel(sid, elig);
+    if (cur.indexOf(d.pid) >= 0) cur = cur.filter(x => x !== d.pid);
+    else cur = s.type === 'ind' ? [d.pid] : cur.concat(d.pid);
+    S.ui.selSid = sid; S.ui.sel = cur; render();
+  },
+  book(d){ run(() => doBook(d.sid)); },
+  'pay-start'(d){ run(() => startPay(d.bid)); },
+  'pay-sim'(d){ run(async () => { await simulatePaid(S.uid, d.bid); flash('Betalningen är verifierad och bokningen är bekräftad.'); }); },
+  'pay-verify'(d){ run(async () => { await simulatePaid(d.fu, d.bid); flash('Betalningen är markerad som verifierad.'); }); },
+  'ref-verify'(d){ run(async () => { await verifyRefunds(d.fu, d.bid); flash('Återbetalningen är verifierad.'); }); },
+  rebook(d){ run(() => rebook(d.bid)); },
+  cx(d){
+    const b = myB(d.bid); if (!b) return;
+    let cur = S.ui.cxBid === d.bid ? S.ui.cx.slice() : (b.players || []).slice();
+    cur = cur.indexOf(d.pid) >= 0 ? cur.filter(x => x !== d.pid) : cur.concat(d.pid);
+    S.ui.cxBid = d.bid; S.ui.cx = cur; render();
+  },
+  'cancel-do'(d){ run(() => cancelDo(d.bid)); },
+  mv(d){ S.ui.mvBid = d.bid; S.ui.mv = d.sid; render(); },
+  'move-do'(d){
+    const b = myB(d.bid);
+    if (b && S.ui.mvBid !== d.bid){ const t = moveTargets(b, Date.now()); if (t[0]){ S.ui.mvBid = d.bid; S.ui.mv = t[0].id; } }
+    run(() => moveDo(d.bid));
+  },
+  'inline-more'(d){ run(async () => { if (!S.ui.terms) throw userErr('Godkänn bokningsvillkoren först.'); await saveInlinePlayer(); S.ui.returnAfterPlayer = 'boka-' + d.sid; flashNext('Spelaren är sparad. Lägg till nästa spelare.'); go('spelare-ny'); }); },
+  'p-rm-ask'(d){ S.ui.rmPid = d.pid; render(); },
+  'p-rm-no'(){ S.ui.rmPid = null; render(); },
+  'p-rm-do'(d){ run(async () => { await B.removePlayer(d.pid); S.ui.rmPid = null; flashNext('Spelaren är borttagen.'); go('mina-sidor'); }); },
+  approve(d){ const el = document.getElementById('msg-' + d.bid); const msg = el ? el.value.trim() : ''; run(async () => { await approve(d.fu, d.bid, msg); flash('Anmälan är godkänd. Bokaren kan nu betala.'); }); },
+  decline(d){ const el = document.getElementById('msg-' + d.bid); const msg = el ? el.value.trim() : ''; run(async () => { await decline(d.fu, d.bid, msg); flash('Anmälan är avslagen.'); }); },
+  att(d){ const b = S.families[d.fu] && S.families[d.fu].bookings[d.bid]; if (!b) return; const cur = !!(b.attended && b.attended[d.pid]); run(() => B.setAttendance(d.fu, d.bid, d.pid, !cur)); },
+  'cancel-open'(d){ S.ui.cancelSid = d.sid; render(); },
+  'cancel-close'(){ S.ui.cancelSid = null; render(); },
+  'cancel-session'(d){
+    const f = document.getElementById('cancel-form'); const fd = f ? new FormData(f) : null;
+    const reason = fd ? String(fd.get('reason') || REASONS[0]) : REASONS[0], msg = fd ? String(fd.get('msg') || '').trim() : '';
+    run(async () => { await cancelSession(d.sid, reason, msg); S.ui.cancelSid = null; delete S.drafts['cancel-' + d.sid]; flash('Passet är inställt. Återbetalningarna väntar på verifiering.'); });
+  },
+  'del-ask'(d){ S.ui.delSid = d.sid; render(); },
+  'del-no'(){ S.ui.delSid = null; render(); },
+  'del-do'(d){ run(async () => { if (allBookings().some(x => x.b && x.b.sid === d.sid)) throw userErr('Passet har bokningar. Ställ in det i stället.'); await B.deleteSession(d.sid); S.ui.delSid = null; flashNext('Passet är borttaget.'); go('admin-pass'); }); }
+};
+
+/* ---------- Kod via mejl eller sms, inloggning och demoverktyg ---------- */
+Object.assign(A, {
+  'book-send'(d){
+    run(async () => {
+      preBook(d.sid);
+      const g = readGuest(), via = d.via === 'sms' ? 'sms' : 'email';
+      const contact = via === 'sms' ? g.phone : g.email;
+      if (!contact) throw userErr(via === 'sms' ? 'Fyll i ditt mobilnummer för att få koden med sms.' : 'Fyll i din e-post för att få koden.');
+      const r = await B.sendCode(via, contact);
+      S.ui.codeTo = contact; S.ui.codeVia = via; S.ui.codeCtx = 'boka-' + d.sid; S.ui.demoCode = (r && r.demoCode) || null; S.ui.codeVal = '';
+      flash(via === 'sms' ? 'Koden är skickad med sms.' : 'Koden är skickad till din e-post.');
+    });
+  },
+  'book-verify'(d){
+    run(async () => {
+      const sid = d.arg;
+      await B.verifyCode(S.ui.codeVia, S.ui.codeTo, String(S.ui.codeVal || '').trim());
+      clearCode();
+      const fam = me();
+      if (fam && fam.account && activePlayers(fam).length){ flash('Välkommen tillbaka! Välj spelare och tryck på knappen för att boka.'); return; }
+      await doBook(sid);
+    });
+  },
+  'login-send'(d){
+    run(async () => {
+      const el = document.getElementById('l-contact'), contact = String((el && el.value) || S.ui.loginVal || '').trim();
+      if (!contact) throw userErr(B.canSms ? 'Skriv din e-post eller ditt mobilnummer.' : 'Skriv din e-post.');
+      const via = contact.indexOf('@') > 0 ? 'email' : 'sms';
+      if (via === 'sms' && !B.canSms) throw userErr('Skriv din e-post. Kod med sms kommer snart.');
+      if (via === 'email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(contact)) throw userErr('Kontrollera e-postadressen.');
+      const r = await B.sendCode(via, contact);
+      S.ui.codeTo = contact; S.ui.codeVia = via; S.ui.codeCtx = 'login-' + d.ret; S.ui.demoCode = (r && r.demoCode) || null; S.ui.codeVal = '';
+    });
+  },
+  'login-verify'(d){
+    run(async () => {
+      await B.verifyCode(S.ui.codeVia, S.ui.codeTo, String(S.ui.codeVal || '').trim());
+      clearCode(); S.ui.loginVal = '';
+      flashNext('Du är inloggad.');
+      go(d.arg || 'mina-sidor');
+    });
+  },
+  'code-reset'(){ clearCode(); render(); },
+  logout(){ run(async () => { await B.signOut(); clearCode(); flashNext('Du är utloggad.'); go('start'); }); },
+  'demo-admin'(){ if (B.toggleAdmin){ B.toggleAdmin(); go(S.isAdmin ? 'admin' : 'start'); } }
+});
+document.addEventListener('input', e => {
+  const t = e.target;
+  if (t.id === 'code-in') S.ui.codeVal = t.value;
+  if (t.id === 'l-contact') S.ui.loginVal = t.value;
+});
+
+/* ---------- Utkast för formulär ---------- */
+function capture(f){
+  const key = f.dataset.key; if (!key) return;
+  const fd = new FormData(f), d = {};
+  Array.from(new Set(Array.from(fd.keys()))).forEach(k => { const all = fd.getAll(k); d[k] = (k === 'goals' || k === 'wg') ? all : all[0]; });
+  if (f.querySelector('[name="goals"]') && !d.goals) d.goals = [];
+  if (f.querySelector('[name="wg"]') && !d.wg) d.wg = [];
+  if (f.querySelector('[name="consent"]') && !d.consent) d.consent = '';
+  S.drafts[key] = Object.assign({}, S.drafts[key] || {}, d);
+}
+
+/* ---------- Navigering ---------- */
+function parseRoute(){
+  const h = (location.hash || '').replace(/^#/, '');
+  if (!h) return {name:'start'};
+  const m = h.match(/^(admin-pass|admin-andra|pass|boka|betala|avboka|flytta|spelare)-([a-z0-9-]+)$/i);
+  if (m) return {name: m[1], arg: m[2]};
+  return {name: h};
+}
+function go(h){
+  if (location.hash === '#' + h){ S.route = parseRoute(); if (!S.keepFlash) S.flash = null; S.keepFlash = false; render(); window.scrollTo(0, 0); }
+  else location.hash = h;
+}
+function render(){
+  const app = document.getElementById('app'); if (!app) return;
+  const a = document.activeElement; let fid = null, s0 = null, s1 = null;
+  if (a && a.id && app.contains(a)){ fid = a.id; try { s0 = a.selectionStart; s1 = a.selectionEnd; } catch (_){ } }
+  app.innerHTML = layout(currentView());
+  if (fid){ const n = document.getElementById(fid); if (n){ try { n.focus({preventScroll:true}); if (s0 != null && n.setSelectionRange) n.setSelectionRange(s0, s1); } catch (_){ } } }
+}
+
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-act]');
+  if (!t || !document.getElementById('app').contains(t)) return;
+  const fn = A[t.dataset.act]; if (!fn) return;
+  if (t.tagName === 'A') e.preventDefault();
+  fn(t.dataset, t, e);
+});
+document.addEventListener('submit', e => {
+  const f = e.target; if (!f.dataset || !f.dataset.form) return;
+  e.preventDefault();
+  const h = FORMS[f.dataset.form]; if (h) run(() => h(f));
+});
+document.addEventListener('input', e => { const t = e.target; if (t.form && t.form.dataset.key) capture(t.form); });
+document.addEventListener('change', e => {
+  const t = e.target;
+  if (t.id === 'b-terms'){ S.ui.terms = t.checked; render(); return; }
+  if (t.name === 'wm'){ if (t.form) capture(t.form); render(); return; }
+  if (t.id === 'a-type'){ const m = document.getElementById('a-max'); const T = TYPES[t.value]; if (m && T){ m.value = T.max; m.max = T.max; m.min = t.value === 'grp' ? 6 : t.value === 'duo' ? 2 : 1; } }
+  if (t.form && t.form.dataset.key) capture(t.form);
+});
+window.addEventListener('hashchange', () => { S.route = parseRoute(); if (!S.keepFlash) S.flash = null; S.keepFlash = false; render(); window.scrollTo(0, 0); });
+
+/* ---------- Start ---------- */
+async function boot(){
+  S.route = parseRoute();
+  render();
+  const timer = setTimeout(() => { if (!S.fresh){ S.slow = true; render(); } }, 10000);
+  try { await B.init(); }
+  catch (e){ console.warn(e); S.err = 'init'; S.ready = true; S.loaded = {s:true, t:true, f:true}; }
+  clearTimeout(timer);
+  render();
+}
+boot();
+})();
+</script>
+
+
+</body>
+</html>
